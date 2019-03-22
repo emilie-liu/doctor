@@ -1,5 +1,6 @@
 <template>
   <div id="product-details">
+    <Header :title="title"></Header>
     <div class="product-detail">
       <img class="pro-img" src="./12.png" alt="">
       <div class="pro-details">
@@ -32,18 +33,30 @@
     </div>
     <div class="res-div">
       <span class="pro-address">最低价格：</span><span class="res-price">¥338.00</span>
-      <cube-button class="res-btn">立即预约</cube-button>
+      <cube-button class="res-btn" @click="productOrder()">立即预约</cube-button>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+  import Header from '../header/header'
   export default {
     name: "product-details",
     data(){
       return{
-        curId:0
+        curId:0,
+        title:'服务详情'
       }
+    },
+    methods:{
+      productOrder(){
+        this.$router.push({
+          path:'/product-order'
+        })
+      }
+    },
+    components:{
+      Header
     }
   }
 </script>
@@ -53,7 +66,7 @@
     background-color #fff
     padding 4%
     text-align left
-    position: relative
+    position relative
     margin-bottom 8px
   .pro-img
     width 30%
@@ -64,19 +77,19 @@
     line-height 1.2
   .pro-name
     position: absolute
-    top: 14%
+    top 14%
   .pro-detail
-    position: absolute
-    top: 36%
+    position absolute
+    top 36%
   .pro-price
-    color: #F4B43E
+    color #F4B43E
   .tabs
-    background-color: #fff
+    background-color #fff
     line-height 40px
     border-bottom 1px solid #F8F8F8
   .tab-item
     display inline-block
-    width: 32%
+    width 32%
   .tab-item.cur
     color #41D7A6
     border-bottom 3px solid #41D7A6
@@ -85,7 +98,7 @@
     color #999999
     font-size 12px
   .res-div
-    position: fixed
+    position fixed
     background-color #fff
     text-align left
     padding 0 0 0 4%
@@ -94,15 +107,15 @@
     bottom 2.2%
     box-shadow: 0px 2px 8px 0px rgba(117,117,117,0.5)
   .res-btn
-    width: 30%
+    width 30%
     display inline-block
-    position: absolute
-    right:3.8%
+    position absolute
+    right 0
     background-color #06C7C5
     height 100%
     text-align center
     border-radius 0
   .res-price
     color #F4B43E
-    font-size: 22px
+    font-size 22px
 </style>

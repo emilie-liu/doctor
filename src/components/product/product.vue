@@ -1,6 +1,6 @@
 <template>
   <div id="product">
-    <header :title="title"></header>
+    <Header :title="title"></Header>
     <ul class="tabs">
       <li class="tab-item" @click="curId=0" :class="{'cur':curId===0}">疫苗</li>
       <li class="tab-item" @click="curId=1" :class="{'cur':curId===1}">医美</li>
@@ -27,7 +27,7 @@
       <h1>DNAtab</h1>
     </div>
     <ul v-show="curId===4">
-      <li class="doctor-detail">
+      <li class="doctor-detail" @click="doctorDetails()">
         <img class="doc-avatar" src="./doc-avatar.png" alt=""/>
         <div class="doc-detail">
           <div>
@@ -50,7 +50,6 @@
 
 <script type="text/ecmascript-6">
   import Header from '../header/header'
-
   export default {
     name: "product",
     data() {
@@ -94,19 +93,19 @@
                 id: '0001',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
-                tel: '11111111',
+                tel: '11111111'
               },
               {
                 id: '0002',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
-                tel: '1122222',
+                tel: '1122222'
               },
               {
                 id: '0003',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
-                tel: '13333333',
+                tel: '13333333'
               }
             ]
           },
@@ -120,19 +119,19 @@
                 id: '0001',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
-                tel: '11111111',
+                tel: '11111111'
               },
               {
                 id: '0002',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
-                tel: '1122222',
+                tel: '1122222'
               },
               {
                 id: '0003',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
-                tel: '13333333',
+                tel: '13333333'
               }
             ]
           },
@@ -146,19 +145,19 @@
                 id: '0001',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
-                tel: '11111111',
+                tel: '11111111'
               },
               {
                 id: '0002',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
-                tel: '1122222',
+                tel: '1122222'
               },
               {
                 id: '0003',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
-                tel: '13333333',
+                tel: '13333333'
               }
             ]
           },
@@ -172,19 +171,19 @@
                 id: '0001',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
-                tel: '11111111',
+                tel: '11111111'
               },
               {
                 id: '0002',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
-                tel: '1122222',
+                tel: '1122222'
               },
               {
                 id: '0003',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
-                tel: '13333333',
+                tel: '13333333'
               }
             ]
           }
@@ -198,6 +197,11 @@
       productDetails() {
         this.$router.push({
           path: '/product-details'
+        })
+      },
+      doctorDetails(){
+        this.$router.push({
+          path: '/doctor-details'
         })
       }
     }
