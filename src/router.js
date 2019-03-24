@@ -2,11 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './components/home/home'
 import Product from './components/product/product'
-import Doctor from  './components/doctor/doctor'
+import Doctor from './components/doctor/doctor'
 import ProductDetails from './components/product-details/product-details'
 import DoctorDetails from './components/doctor-details/doctor-details'
 import Contact from './components/contact/contact'
 import ProductOrder from './components/product-order/product-order'
+import ProductPay from './components/product-pay/product-pay'
 
 Vue.use(Router)
 
@@ -25,14 +26,14 @@ export default new Router({
     {
       path: '/product',
       component: Product,
-      children:[
+      children: [
         {
-          path:':id',
-          component:ProductDetails
+          path: ':id',
+          component: ProductDetails
         },
         {
-          path:':id',
-          component:DoctorDetails
+          path: ':id',
+          component: DoctorDetails
         }
       ]
     },
@@ -47,20 +48,24 @@ export default new Router({
       ]
     },
     {
-      path:'/product-details',
+      path: '/product-details',
       component: ProductDetails
     },
     {
-      path:'/doctor-details',
-      component:DoctorDetails
+      path: '/doctor-details',
+      component: DoctorDetails
     },
     {
-      path:'/contact',
+      path: '/contact',
       component: Contact
     },
     {
-      path:'/product-order',
+      path: '/product-order',
       component: ProductOrder
+    },
+    {
+      path: '/product-pay',
+      component: ProductPay
     }
   ]
 })

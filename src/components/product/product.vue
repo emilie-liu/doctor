@@ -51,7 +51,7 @@
 <script type="text/ecmascript-6">
   import Header from '../header/header'
   export default {
-    name: "product",
+    name: 'product',
     data() {
       return {
         title: '医生列表',

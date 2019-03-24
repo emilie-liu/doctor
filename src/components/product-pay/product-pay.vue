@@ -4,46 +4,48 @@
     <form class="product-order">
       <div class="order-module">
         <div class="package">
+          <span>订单编号</span>
+          <input type="text" value="09009900000099" dir="rtl">
+        </div>
+        <div class="package">
           <span>套餐</span>
           <input type="text" value="套餐" dir="rtl">
         </div>
         <div class="package">
           <span>医院</span>
-          <cube-select v-model="value" :options="options"></cube-select>
+          <input type="text" value="香港安生医疗中心" dir="rtl">
         </div>
         <div class="package">
           <span>金额</span>
           <input type="text" value="388.00" dir="rtl">
         </div>
-      </div>
-      <div class="order-module">
         <div class="package">
-          <div class="package">
-            <Calender></Calender>
-          </div>
-          <div class="dates">
-            <cube-radio-group v-model="dated" :options="dates" :hollow-style="true"/>
-          </div>
+          <span>预约日期</span>
+          <input type="text" value="2019-01-23" dir="rtl">
         </div>
       </div>
       <div class="order-module">
         <div class="package">
-          <span>就诊人姓名<i>*</i></span>
+          <span>就诊人姓名</span>
           <input type="text" value="请输入姓名" dir="rtl">
         </div>
         <div class="package">
-          <span>手机号码<i>*</i></span>
+          <span>就诊时间</span>
+          <input type="text" value="2019-01-23 09:00～12:00" dir="rtl">
+        </div>
+        <div class="package">
+          <span>手机号码</span>
           <input type="text" value="请输入" dir="rtl">
         </div>
         <div class="package">
-          <span>身份证号码<i>*</i></span>
+          <span>身份证号码</span>
           <input type="text" value="请输入" dir="rtl">
         </div>
         <div class="package">
-          <span>性别<i class="i-color">*</i></span>
+          <span>性别</span>
         </div>
         <div class="package">
-          <span>年龄<i>*</i></span>
+          <span>年龄</span>
           <input type="text" value="请输入" dir="rtl">
         </div>
         <div class="package">
@@ -84,39 +86,22 @@
         </div>
       </div>
     </form>
-    <button class="btn-submit" @click="ProductPay()">提交订单</button>
+    <button class="btn-submit">确认支付</button>
   </div>
 </template>
 
 <script>
   import Header from '../header/header'
-  import Calender from '../calender/calender'
 
   export default {
     name: 'product-order',
     data() {
       return {
-        title: '确认订单',
-        value: '香港安生医疗中心',
-        options: [
-          '香港安生医疗中心', '澳门中心医院', '深证南山医院', '深圳总医院', '上海医院中心', '疫苗中心医院'
-        ],
-        dated: '',
-        dates: [
-          '9:00～12:00', '15:00～18:00'
-        ]
+        title: '确认支付'
       }
     },
     components: {
-      Header,
-      Calender
-    },
-    methods: {
-      ProductPay() {
-        this.$router.push({
-          path: '/product-pay'
-        })
-      }
+      Header
     }
   }
 </script>
@@ -149,16 +134,11 @@
         line-height 30px
         text-align right
         color #999999
-
     >>> .date
       width 10% !important
       float left !important
-
     >>> .cube-radio
       padding 0
-
-    >>> i
-      color #FF6F5C
 
   .btn-submit
     background-color #06C7C5

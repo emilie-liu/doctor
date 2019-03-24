@@ -36,11 +36,12 @@
 
 <script>
   import Header from '../header/header'
+
   export default {
     name: 'doctor',
     data() {
       return {
-        title:'医生列表',
+        title: '医生列表',
         selectedLabel: '',
         specialist: [
           {
@@ -318,7 +319,7 @@
         ]
       }
     },
-    //加载的时候默认显示第一个label的内容
+    // 加载的时候默认显示第一个label的内容
     created() {
       this.selectedLabel = this.specialist[0].label
     },
@@ -329,7 +330,7 @@
         })
       }
     },
-    components:{
+    components: {
       Header
     }
   }
@@ -351,12 +352,21 @@
   .doctor-wrapper
     flex 1
 
+  .cube-tab
+    line-height 40px
+    border-bottom 1px solid #979797
+
   .cube-tab_active
     color #06C6C8
     background-color #fff
 
+  .cube-scroll-wrapper
+    .cube-scroll-content
+      height 100% !important
+
   .cube-tab-bar
     display inline-block
+    height 100%
 
   .tab-panel-li
     border-bottom 2px solid #F8F8F8

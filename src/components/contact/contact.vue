@@ -6,9 +6,9 @@
       <p>感谢您使用「港医德」，如您对我们的资讯有任何查询或意见，欢迎您填写一下表格联系我们。</p>
       <form>
         <div class="content-title">昵称：</div>
-        <input></input>
+        <input type="text">
         <div class="content-title">电话：</div>
-        <input></input>
+        <input>
         <div class="content-title">内容：</div>
         <textarea></textarea>
       </form>
@@ -21,17 +21,14 @@
 <script>
   import Header from '../header/header'
   import Home from '../home/home'
-  import Form from "cube-ui/src/components/form/form";
-
   export default {
-    name: "contact",
-    data(){
-      return{
-        title:'联系我们'
+    name: 'contact',
+    data() {
+      return {
+        title: '联系我们'
       }
     },
     components: {
-      Form,
       Header,
       Home
     }
@@ -42,14 +39,18 @@
   .contact-content
     text-align left
     padding 6%
+
   .contact-title
     font-size 16px
+
   p
     color #999999
     margin 4% 0
     line-height 1.6
+
   .content-title
     line-height 30px
+
   input,
   textarea
     width 100%
@@ -57,6 +58,7 @@
     background-color #F4F4F4
     border 1px solid #D8D8D8
     padding 0 2%
+
   .btn-submit
     background-color #06C7C5
     border-radius 6px
