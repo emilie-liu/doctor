@@ -1,50 +1,54 @@
 <template>
   <div id="product">
     <Header :title="title"></Header>
-    <ul class="tabs">
-      <li class="tab-item" @click="curId=0" :class="{'cur':curId===0}">疫苗</li>
-      <li class="tab-item" @click="curId=1" :class="{'cur':curId===1}">医美</li>
-      <li class="tab-item" @click="curId=2" :class="{'cur':curId===2}">体检</li>
-      <li class="tab-item" @click="curId=3" :class="{'cur':curId===3}">DNA</li>
-      <li class="tab-item" @click="curId=4" :class="{'cur':curId===4}">第二治疗</li>
-    </ul>
-    <ul v-show="curId===0">
-      <li class="tab-details" v-for="(item, index) in products" :key="index" @click="productDetails()">
-        <img class="pro-img" src="./11.png" alt="">
-        <div class="pro-details">
-          <div class="pro-name">{{item.name}}</div>
-          <div class="pro-price">¥{{item.price}}</div>
+    <div class="product-content">
+      <ul class="tabs">
+        <li class="tab-item" @click="curId=0" :class="{'cur':curId===0}">疫苗</li>
+        <li class="tab-item" @click="curId=1" :class="{'cur':curId===1}">医美</li>
+        <li class="tab-item" @click="curId=2" :class="{'cur':curId===2}">体检</li>
+        <li class="tab-item" @click="curId=3" :class="{'cur':curId===3}">DNA</li>
+        <li class="tab-item" @click="curId=4" :class="{'cur':curId===4}">第二治疗</li>
+      </ul>
+      <div class="tabs-content">
+        <ul v-show="curId===0">
+          <li class="tab-details" v-for="(item, index) in products" :key="index" @click="productDetails()">
+            <img class="pro-img" src="./11.png" alt="">
+            <div class="pro-details">
+              <div class="pro-name">{{item.name}}</div>
+              <div class="pro-price">¥{{item.price}}</div>
+            </div>
+          </li>
+        </ul>
+        <div v-show="curId===1">
+          <h1>医美tab</h1>
         </div>
-      </li>
-    </ul>
-    <div v-show="curId===1">
-      <h1>医美tab</h1>
-    </div>
-    <div v-show="curId===2">
-      <h1>体检tab</h1>
-    </div>
-    <div v-show="curId===3">
-      <h1>DNAtab</h1>
-    </div>
-    <ul v-show="curId===4">
-      <li class="doctor-detail" @click="doctorDetails()">
-        <img class="doc-avatar" src="./doc-avatar.png" alt=""/>
-        <div class="doc-detail">
-          <div>
-            <span class="doc-name">陈奕迅医生</span>
-            <span class="doc-dept">外科</span>
-            <span class="doc-category">主治医生</span>
-          </div>
-          <div>
-            <span class="font-color-12px">预约金:</span>
-            <span class="bar-price">¥1000.01</span>
-            <span class="font-color-12px">第二诊疗金:</span>
-            <span class="sec-price">¥1000.01</span>
-          </div>
+        <div v-show="curId===2">
+          <h1>体检tab</h1>
         </div>
-        <div class="doc-expertise font-color-12px">专长：从事外科20年丰富的男性前列腺疾病，医学博士生导……</div>
-      </li>
-    </ul>
+        <div v-show="curId===3">
+          <h1>DNAtab</h1>
+        </div>
+        <ul v-show="curId===4">
+          <li class="doctor-detail" @click="doctorDetails()">
+            <img class="doc-avatar" src="./doc-avatar.png" alt=""/>
+            <div class="doc-detail">
+              <div>
+                <span class="doc-name">陈奕迅医生</span>
+                <span class="doc-dept">外科</span>
+                <span class="doc-category">主治医生</span>
+              </div>
+              <div>
+                <span class="font-color-12px">预约金:</span>
+                <span class="bar-price">¥1000.01</span>
+                <span class="font-color-12px">第二诊疗金:</span>
+                <span class="sec-price">¥1000.01</span>
+              </div>
+            </div>
+            <div class="doc-expertise font-color-12px">专长：从事外科20年丰富的男性前列腺疾病，医学博士生导……</div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -59,7 +63,7 @@
         products: [
           {
             id: '001',
-            name: '流感4价疫苗01',
+            name: '流感4价疫苗01流感4价疫苗流感4价疫苗流感4价疫苗',
             price: '1000.01',
             details: '11医疗中心13价肺炎球菌疫苗价格为1250港币+250医生诊金费用',
             clinics: [
@@ -90,19 +94,19 @@
             details: '22医疗中心13价肺炎球菌疫苗价格为1250港币+250医生诊金费用',
             clinics: [
               {
-                id: '0001',
+                id: '0004',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
                 tel: '11111111'
               },
               {
-                id: '0002',
+                id: '0005',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
                 tel: '1122222'
               },
               {
-                id: '0003',
+                id: '0006',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
                 tel: '13333333'
@@ -116,19 +120,19 @@
             details: '33医疗中心13价肺炎球菌疫苗价格为1250港币+250医生诊金费用',
             clinics: [
               {
-                id: '0001',
+                id: '0007',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
                 tel: '11111111'
               },
               {
-                id: '0002',
+                id: '0008',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
                 tel: '1122222'
               },
               {
-                id: '0003',
+                id: '0009',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
                 tel: '13333333'
@@ -142,19 +146,19 @@
             details: '44医疗中心13价肺炎球菌疫苗价格为1250港币+250医生诊金费用',
             clinics: [
               {
-                id: '0001',
+                id: '0010',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
                 tel: '11111111'
               },
               {
-                id: '0002',
+                id: '0011',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
                 tel: '1122222'
               },
               {
-                id: '0003',
+                id: '0012',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
                 tel: '13333333'
@@ -168,19 +172,45 @@
             details: '55医疗中心13价肺炎球菌疫苗价格为1250港币+250医生诊金费用',
             clinics: [
               {
-                id: '0001',
+                id: '0013',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
                 tel: '11111111'
               },
               {
-                id: '0002',
+                id: '0014',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
                 tel: '1122222'
               },
               {
-                id: '0003',
+                id: '0015',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                tel: '13333333'
+              }
+            ]
+          },
+          {
+            id: '006',
+            name: '流感4价疫苗06',
+            price: '1000.01',
+            details: '55医疗中心13价肺炎球菌疫苗价格为1250港币+250医生诊金费用',
+            clinics: [
+              {
+                id: '0016',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                tel: '11111111'
+              },
+              {
+                id: '0017',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                tel: '1122222'
+              },
+              {
+                id: '0018',
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
                 tel: '13333333'
@@ -212,6 +242,16 @@
   .tabs
     background-color #fff
     line-height 40px
+    position fixed
+    top 44px
+    width 100%
+    z-index 1
+  .product-content
+    margin-left 2%
+  .tabs-content
+    position: absolute
+    top 88px
+    width 100%
 
   .tab-item
     display inline-block
@@ -224,32 +264,34 @@
   .tab-details
     background-color #fff
     margin-top: 8px
-    padding 4%
+    padding 3%
     text-align left
     position: relative
 
   .pro-img
-    width 30%
+    width 34%
     margin-right 2%
 
   .pro-details
     display inline-block
+    vertical-align top
+    width 64%
 
   .pro-name
-    position: absolute
-    top: 16%
-
+    height 64px
+    line-height 1.4
   .pro-price
     color: #F4B43E
 
   .doctor-detail
     background-color #fff
-    padding 4% 6%
+    padding 4% 3%
     margin-top 2%
     text-align left
   .doc-detail
     display inline-block
     line-height 1.8
+    width 84%
   .doc-avatar
     width 14%
     margin-right 2%

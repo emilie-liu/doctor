@@ -1,35 +1,41 @@
 <template>
   <div id="product-details">
     <Header :title="title"></Header>
-    <div class="product-detail">
-      <img class="pro-img" src="./12.png" alt="">
-      <div class="pro-details">
-        <div class="pro-name">香港13价肺炎疫苗</div>
-        <div class="pro-detail">医疗中心13价肺炎球菌疫苗价格为港币+250医生诊金费用……</div>
-        <div class="pro-price">¥100.01</div>
-      </div>
-    </div>
-    <ul class="tabs">
-      <li class="tab-item" @click="curId=0" :class="{'cur':curId===0}">支持诊所</li>
-      <li class="tab-item" @click="curId=1" :class="{'cur':curId===1}">产品详情</li>
-      <li class="tab-item" @click="curId=2" :class="{'cur':curId===2}">预约须知</li>
-    </ul>
-    <div v-show="curId===0">
+    <div class="pro-content">
       <div class="product-detail">
-        <img class="pro-img" src="./15.png" alt="">
+        <img class="pro-img" src="./12.png" alt="">
         <div class="pro-details">
           <div class="pro-name">香港13价肺炎疫苗</div>
-          <div class="pro-address">地址：上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号</div>
-          <div class="pro-tel">联系电话：4008831114</div>
+          <div class="pro-detail">医疗中心13价肺炎球菌疫苗价格为港币+250医生诊金费用……</div>
           <div class="pro-price">¥100.01</div>
         </div>
       </div>
-    </div>
-    <div v-show="curId===1">
-      <h1>产品详情tab</h1>
-    </div>
-    <div v-show="curId===2">
-      <h1>预约须知tab</h1>
+      <div class="pro-tabs">
+        <ul class="tabs">
+          <li class="tab-item" @click="curId=0" :class="{'cur':curId===0}">支持诊所</li>
+          <li class="tab-item" @click="curId=1" :class="{'cur':curId===1}">产品详情</li>
+          <li class="tab-item" @click="curId=2" :class="{'cur':curId===2}">预约须知</li>
+        </ul>
+        <div class="tab-content">
+          <div v-show="curId===0">
+            <div class="tab-detail">
+              <img class="pro-img" src="./15.png" alt="">
+              <div class="pro-details">
+                <div class="pro-name">香港13价肺炎疫苗</div>
+                <div class="pro-address">地址：上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号</div>
+                <div class="pro-tel">联系电话：4008831114</div>
+                <div class="pro-price">¥100.01</div>
+              </div>
+            </div>
+              </div>
+          <div v-show="curId===1">
+            <h1>产品详情tab</h1>
+          </div>
+          <div v-show="curId===2">
+            <h1>预约须知tab</h1>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="res-div">
       <span class="pro-address">最低价格：</span><span class="res-price">¥338.00</span>
@@ -63,29 +69,43 @@
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
+  .pro-content
+    position absolute
+    top 44px
+    margin-left 2%
   .product-detail
+  .tab-detail
     background-color #fff
-    padding 4%
+    padding 3%
     text-align left
     position relative
     margin-bottom 8px
 
+  .product-detail
+    position fixed
+    top 44px
+    left 0
+    z-index 1
+    width 94%
+
+  .tabs
+    position fixed
+    top 158px
+    width 100%
+    z-index 1
+
+  .tab-content
+    position relative
+    top 160px
   .pro-img
-    width 30%
+    width 34%
     margin-right 2%
 
   .pro-details
     display inline-block
-    width 58%
-    line-height 1.2
-
-  .pro-name
-    position: absolute
-    top 14%
-
-  .pro-detail
-    position absolute
-    top 36%
+    width 64%
+    line-height 1.4
+    vertical-align top
 
   .pro-price
     color #F4B43E
@@ -97,7 +117,7 @@
 
   .tab-item
     display inline-block
-    width 32%
+    width 33%
 
   .tab-item.cur
     color #41D7A6
@@ -115,7 +135,7 @@
     padding 0 0 0 4%
     line-height 50px
     width: 100%
-    bottom 2.2%
+    bottom 0
     box-shadow: 0px 2px 8px 0px rgba(117, 117, 117, 0.5)
 
   .res-btn

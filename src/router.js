@@ -8,6 +8,8 @@ import DoctorDetails from './components/doctor-details/doctor-details'
 import Contact from './components/contact/contact'
 import ProductOrder from './components/product-order/product-order'
 import ProductPay from './components/product-pay/product-pay'
+import DoctorOrder from './components/doctor-order/doctor-order'
+import DoctorPay from './components/doctor-pay/doctor-pay'
 
 Vue.use(Router)
 
@@ -66,6 +68,14 @@ export default new Router({
     {
       path: '/product-pay',
       component: ProductPay
+    },
+    {
+      path: '/doctor-order',
+      component: DoctorOrder
+    },
+    {
+      path: '/doctor-pay',
+      component: DoctorPay
     }
   ]
 })

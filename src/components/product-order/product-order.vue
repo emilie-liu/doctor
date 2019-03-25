@@ -1,90 +1,92 @@
 <template>
   <div id="product-order">
     <Header :title="title"></Header>
-    <form class="product-order">
-      <div class="order-module">
-        <div class="package">
-          <span>套餐</span>
-          <input type="text" value="套餐" dir="rtl">
-        </div>
-        <div class="package">
-          <span>医院</span>
-          <cube-select v-model="value" :options="options"></cube-select>
-        </div>
-        <div class="package">
-          <span>金额</span>
-          <input type="text" value="388.00" dir="rtl">
-        </div>
-      </div>
-      <div class="order-module">
-        <div class="package">
+    <div class="order-content">
+      <form class="product-order">
+        <div class="order-module">
           <div class="package">
-            <Calender></Calender>
+            <span>套餐</span>
+            <input type="text" value="套餐" dir="rtl">
           </div>
-          <div class="dates">
-            <cube-radio-group v-model="dated" :options="dates" :hollow-style="true"/>
+          <div class="package">
+            <span>医院</span>
+            <cube-select v-model="value" :options="options"></cube-select>
+          </div>
+          <div class="package">
+            <span>金额</span>
+            <input type="text" value="388.00" dir="rtl">
           </div>
         </div>
-      </div>
-      <div class="order-module">
-        <div class="package">
-          <span>就诊人姓名<i>*</i></span>
-          <input type="text" value="请输入姓名" dir="rtl">
+        <div class="order-module">
+          <div class="package">
+            <div class="package">
+              <Calender></Calender>
+            </div>
+            <div class="dates">
+              <cube-radio-group v-model="dated" :options="dates" :hollow-style="true"/>
+            </div>
+          </div>
         </div>
-        <div class="package">
-          <span>手机号码<i>*</i></span>
-          <input type="text" value="请输入" dir="rtl">
+        <div class="order-module">
+          <div class="package">
+            <span>就诊人姓名<i>*</i></span>
+            <input type="text" value="请输入姓名" dir="rtl">
+          </div>
+          <div class="package">
+            <span>手机号码<i>*</i></span>
+            <input type="text" value="请输入" dir="rtl">
+          </div>
+          <div class="package">
+            <span>身份证号码<i>*</i></span>
+            <input type="text" value="请输入" dir="rtl">
+          </div>
+          <div class="package">
+            <span>性别<i class="i-color">*</i></span>
+          </div>
+          <div class="package">
+            <span>年龄</span>
+            <input type="text" value="请输入" dir="rtl">
+          </div>
+          <div class="package">
+            <span>香港身份证</span>
+            <input type="text" value="请输入" dir="rtl">
+          </div>
+          <div class="package">
+            <span>港澳台通行证</span>
+            <input type="text" value="请输入" dir="rtl">
+          </div>
+          <div class="package">
+            <span>其他护照</span>
+            <input type="text" value="请输入" dir="rtl">
+          </div>
+          <div class="package">
+            <span>预约人姓名</span>
+            <input type="text" value="请输入" dir="rtl">
+          </div>
+          <div class="package">
+            <span>邮箱</span>
+            <input type="text" value="请输入" dir="rtl">
+          </div>
+          <div class="package">
+            <span>微信</span>
+            <input type="text" value="请输入" dir="rtl">
+          </div>
+          <div class="package">
+            <span>疾病史</span>
+            <input type="text" value="请输入" dir="rtl">
+          </div>
+          <div class="package">
+            <span>过敏史</span>
+            <input type="text" value="请输入" dir="rtl">
+          </div>
+          <div class="package">
+            <span>备注</span>
+            <input type="text" value="请输入" dir="rtl">
+          </div>
         </div>
-        <div class="package">
-          <span>身份证号码<i>*</i></span>
-          <input type="text" value="请输入" dir="rtl">
-        </div>
-        <div class="package">
-          <span>性别<i class="i-color">*</i></span>
-        </div>
-        <div class="package">
-          <span>年龄<i>*</i></span>
-          <input type="text" value="请输入" dir="rtl">
-        </div>
-        <div class="package">
-          <span>香港身份证</span>
-          <input type="text" value="请输入" dir="rtl">
-        </div>
-        <div class="package">
-          <span>港澳台通行证</span>
-          <input type="text" value="请输入" dir="rtl">
-        </div>
-        <div class="package">
-          <span>其他护照</span>
-          <input type="text" value="请输入" dir="rtl">
-        </div>
-        <div class="package">
-          <span>预约人姓名</span>
-          <input type="text" value="请输入" dir="rtl">
-        </div>
-        <div class="package">
-          <span>邮箱</span>
-          <input type="text" value="请输入" dir="rtl">
-        </div>
-        <div class="package">
-          <span>微信</span>
-          <input type="text" value="请输入" dir="rtl">
-        </div>
-        <div class="package">
-          <span>疾病史</span>
-          <input type="text" value="请输入" dir="rtl">
-        </div>
-        <div class="package">
-          <span>过敏史</span>
-          <input type="text" value="请输入" dir="rtl">
-        </div>
-        <div class="package">
-          <span>备注</span>
-          <input type="text" value="请输入" dir="rtl">
-        </div>
-      </div>
-    </form>
-    <button class="btn-submit" @click="ProductPay()">提交订单</button>
+      </form>
+      <button class="btn-submit" @click="ProductPay()">提交订单</button>
+    </div>
   </div>
 </template>
 
@@ -122,6 +124,12 @@
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
+  .order-content
+    position absolute
+    top 44px
+    width 100%
+    margin-left 2%
+
   .order-module
     background-color #fff
     margin-bottom 8px
