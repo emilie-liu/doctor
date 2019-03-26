@@ -40,6 +40,16 @@
           </div>
           <div class="package">
             <span>性别<i class="i-color">*</i></span>
+            <div class="sex">
+              <div>
+                <input class="sex-input" type="radio" id="female" value="女" v-model="sex">
+                <label class="font-color" for="female">女</label>
+              </div>
+              <div>
+                <input class="sex-input" type="radio" id="male" value="男" v-model="sex">
+                <label class="font-color" for="male">男</label>
+              </div>
+            </div>
           </div>
           <div class="package">
             <span>年龄</span>
@@ -95,13 +105,14 @@
     name: 'doctor-order',
     data() {
       return {
-        title: '提交订单'
+        title: '提交订单',
+        sex: ''
       }
     },
-    methods:{
-      DoctorPay(){
+    methods: {
+      DoctorPay() {
         this.$router.push({
-          path:'./doctor-pay'
+          path: './doctor-pay'
         })
       }
     },
@@ -137,24 +148,11 @@
         color #999999
         line-height 48px
 
-      .cube-select
-        width 60%
-        border none
-        display inline-block
-        float right
-        line-height 30px
-        text-align right
-        color #999999
-
-    >>> .date
-      width 10% !important
-      float left !important
-
-    >>> .cube-radio
-      padding 0
-
     >>> i
       color #FF6F5C
+
+  >>> .font-color
+        color #999999
 
   >>> .doctor-package
     padding 4% 0
@@ -186,13 +184,58 @@
           border-radius 8px
           font-size 10px
 
-  >>> .doctor-job
-    margin-top 4px
+  >>> .package
+    .sex
+      width 60%
+      display inline-block
+      text-align right
+      float right
 
-  >>> .font-color
-    color #999999
+      div
+        width 30%
+        display inline-block
 
-  .btn-submit
+        .sex-input
+          display inline-block
+          width 10%
+          float none
+          margin-left 8%
+          vertical-align middle
+          margin-left -2%
+
+  >>> input[type="radio"]
+    position absolute
+    clip rect(0, 0, 0, 0)
+
+    ~ label
+      &:before
+        content "\a0"
+        display inline-block
+        vertical-align middle
+        width 8px
+        height 8px
+        margin-right 4px
+        border-radius 50%
+        border 1px solid #999999
+        line-height 1
+        text-indent 0.15em
+        padding 3px
+
+  >>> input[type="radio"]:checked
+    ~ label
+      &:before
+        background-color #2EA9E2
+        border 1px solid #2EA9E2
+        background-clip content-box
+        padding 3px
+
+    >>> .doctor-job
+      margin-top 4px
+
+    >>> .font-color
+      color #999999
+
+  >>> .btn-submit
     background-color #06C7C5
     border-radius 6px
     width 40%

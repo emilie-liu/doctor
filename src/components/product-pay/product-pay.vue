@@ -44,6 +44,16 @@
           </div>
           <div class="package">
             <span>性别</span>
+            <div class="sex">
+              <div>
+                <input class="sex-input" type="radio" id="female" value="女" v-model="sex">
+                <label class="font-color" for="female">女</label>
+              </div>
+              <div>
+                <input class="sex-input" type="radio" id="male" value="男" v-model="sex">
+                <label class="font-color" for="male">男</label>
+              </div>
+            </div>
           </div>
           <div class="package">
             <span>年龄</span>
@@ -149,6 +159,54 @@
 
     >>> .cube-radio
       padding 0
+
+  >>> .font-color
+    color #999999
+
+  >>> .package
+    .sex
+      width 60%
+      display inline-block
+      text-align right
+      float right
+
+      div
+        width 30%
+        display inline-block
+
+        .sex-input
+          display inline-block
+          width 10%
+          float none
+          margin-left 8%
+          vertical-align middle
+          margin-left -2%
+
+  >>> input[type="radio"]
+    position absolute
+    clip rect(0, 0, 0, 0)
+
+    ~ label
+      &:before
+        content "\a0"
+        display inline-block
+        vertical-align middle
+        width 8px
+        height 8px
+        margin-right 4px
+        border-radius 50%
+        border 1px solid #999999
+        line-height 1
+        text-indent 0.15em
+        padding 3px
+
+  >>> input[type="radio"]:checked
+    ~ label
+      &:before
+        background-color #2EA9E2
+        border 1px solid #2EA9E2
+        background-clip content-box
+        padding 3px
 
   .btn-submit
     background-color #06C7C5

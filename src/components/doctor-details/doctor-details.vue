@@ -38,6 +38,14 @@
               <span class="address">香港九龙尖沙咀弥敦道26号11楼全层（尖沙咀喜来登酒店侧）</span></div>
           </div>
         </div>
+        <div class="date">
+          <div class="package">预约排期</div>
+          <div class="package">
+            <Calender></Calender>
+          </div>
+          <div class="package"></div>
+          <div class="package"></div>
+        </div>
       </form>
       <button class="btn-submit" @click="DoctorOrder()">确定预约</button>
     </div>
@@ -46,6 +54,7 @@
 
 <script>
   import Header from '../header/header'
+  import Calender from '../calender/calender'
 
   export default {
     name: 'doctor-details',
@@ -62,7 +71,8 @@
       }
     },
     components: {
-      Header
+      Header,
+      Calender
     }
   }
 </script>
@@ -119,6 +129,14 @@
       color #999999
       line-height 1.4
 
+     .date
+       text-align left
+       padding 0 14px
+       line-height 1.4
+
+      .package
+        border-bottom 1px solid #f8f8f8
+        padding-bottom 10px
     .bar-price
       color #4795FF
 

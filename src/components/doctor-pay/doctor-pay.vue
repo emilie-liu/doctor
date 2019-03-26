@@ -48,6 +48,16 @@
           </div>
           <div class="package">
             <span>性别</span>
+            <div class="sex">
+              <div>
+                <input class="sex-input" type="radio" id="female" value="女" v-model="sex">
+                <label class="font-color" for="female">女</label>
+              </div>
+              <div>
+                <input class="sex-input" type="radio" id="male" value="男" v-model="sex">
+                <label class="font-color" for="male">男</label>
+              </div>
+            </div>
           </div>
           <div class="package">
             <span>年龄</span>
@@ -91,20 +101,22 @@
           </div>
         </div>
       </form>
-      <button class="btn-submit-cancel" @click="showBtn()">取消订单</button>
-      <button class="btn-submit">提交订单</button>
+      <button class="btn-submit-cancel" @click="showSlot()">取消订单</button>
+      <button class="btn-submit">支付</button>
     </div>
   </div>
 </template>
 
 <script>
   import Header from '../header/header'
+  // import Dialog from './dialog'
 
   export default {
     name: 'doctor-pay',
     data() {
       return {
-        title: '确认支付'
+        title: '确认支付',
+        sex: ''
       }
     },
     methods: {
@@ -112,7 +124,6 @@
         this.$createDialog({
           type: 'confirm',
           icon: 'cubeic-alert',
-          img: './failed.png',
           content: '是否确定取消该订单！',
           confirmBtn: {
             text: '确定',
@@ -141,23 +152,22 @@
                      txt: '点击取消按钮'
                    }).show()
                  }*/
-        }, (createElement) => {
-          return [
-            createElement('div', {
-              'class': {
-                'my-title-img': true
-              },
-              slot: 'content'
-            },'dfafds')
-          ]
         }).show()
       },
       showSlot() {
         this.$createDialog({
-          type: 'alert',
+          type: 'confirm',
           confirmBtn: {
-            text: '我知道了',
-            active: true
+            text: '确认',
+            active: true,
+            disabled: false,
+            href: 'javascript:;'
+          },
+          cancelBtn: {
+            text: '取消',
+            active: false,
+            disabled: false,
+            href: 'javascript:;'
           }
         }, (createElement) => {
           return [
@@ -171,14 +181,9 @@
                 'class': {
                   'my-title-img': true
                 }
-              })
-            ]),
-            createElement('p', {
-              'class': {
-                'my-content': true
-              },
-              slot: 'content'
-            }, '价格仍按快车计算')
+              }),
+              createElement('p', '是否确定取消该订单！')
+            ])
           ]
         }).show()
       }
@@ -277,10 +282,6 @@
     line-height 40px
     border none
 
-  .my-title-img
-    height 120px
-    background-image url("./failed.png")
-
   .btn-submit-cancel
     background-color #F39281
     border-radius 6px
@@ -289,6 +290,51 @@
     color #fff
     line-height 40px
     border none
+
+  >>> .package
+    .sex
+      width 60%
+      display inline-block
+      text-align right
+      float right
+
+      div
+        width 30%
+        display inline-block
+
+        .sex-input
+          display inline-block
+          width 10%
+          float none
+          margin-left 8%
+          vertical-align middle
+          margin-left -2%
+
+  >>> input[type="radio"]
+    position absolute
+    clip rect(0, 0, 0, 0)
+
+    ~ label
+      &:before
+        content "\a0"
+        display inline-block
+        vertical-align middle
+        width 8px
+        height 8px
+        margin-right 4px
+        border-radius 50%
+        border 1px solid #999999
+        line-height 1
+        text-indent 0.15em
+        padding 3px
+
+  >>> input[type="radio"]:checked
+    ~ label
+      &:before
+        background-color #2EA9E2
+        border 1px solid #2EA9E2
+        background-clip content-box
+        padding 3px
 
 
 </style>
