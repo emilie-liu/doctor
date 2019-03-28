@@ -3,101 +3,101 @@
     <Header :title="title"></Header>
     <div class="pay-content">
       <form class="product-order">
-        <div class="order-module">
+        <div class="order-module" v-for="(product, index) in products" :key="index" v-show="product.id === productId">
           <div class="package">
             <span>订单编号</span>
-            <input type="text" value="09009900000099" dir="rtl">
+            <input type="text" name="number" value="09009900000099" dir="rtl">
           </div>
           <div class="package">
             <span>套餐</span>
-            <input type="text" value="套餐" dir="rtl">
+            <input type="text" name="name" :value="product.name" dir="rtl">
           </div>
           <div class="package">
             <span>医院</span>
-            <input type="text" value="香港安生医疗中心" dir="rtl">
+            <input type="text" name="hospital" value="香港安生医疗中心" dir="rtl">
           </div>
           <div class="package">
             <span>金额</span>
-            <input type="text" value="388.00" dir="rtl">
+            <input type="text" name="price" :value="product.price" dir="rtl">
           </div>
           <div class="package">
             <span>预约日期</span>
-            <input type="text" value="2019-01-23" dir="rtl">
+            <input type="text" name="time" value="2019-01-23" dir="rtl">
           </div>
         </div>
         <div class="order-module">
           <div class="package">
             <span>就诊人姓名</span>
-            <input type="text" value="请输入姓名" dir="rtl">
+            <input type="text" name="username" value="请输入姓名" dir="rtl">
           </div>
           <div class="package">
             <span>就诊时间</span>
-            <input type="text" value="2019-01-23 09:00～12:00" dir="rtl">
+            <input type="text" name="date" value="2019-01-23 09:00～12:00" dir="rtl">
           </div>
           <div class="package">
             <span>手机号码</span>
-            <input type="text" value="请输入" dir="rtl">
+            <input type="text" name="tel" value="请输入" dir="rtl">
           </div>
           <div class="package">
             <span>身份证号码</span>
-            <input type="text" value="请输入" dir="rtl">
+            <input type="text" name="cardid" value="请输入" dir="rtl">
           </div>
           <div class="package">
             <span>性别</span>
             <div class="sex">
               <div>
-                <input class="sex-input" type="radio" id="female" value="女" v-model="sex">
+                <input class="sex-input" type="radio" name="sex" id="female" value="女" v-model="sex">
                 <label class="font-color" for="female">女</label>
               </div>
               <div>
-                <input class="sex-input" type="radio" id="male" value="男" v-model="sex">
+                <input class="sex-input" type="radio" name="sex" id="male" value="男" v-model="sex">
                 <label class="font-color" for="male">男</label>
               </div>
             </div>
           </div>
           <div class="package">
             <span>年龄</span>
-            <input type="text" value="请输入" dir="rtl">
+            <input type="text" name="age" value="请输入" dir="rtl">
           </div>
           <div class="package">
             <span>香港身份证</span>
-            <input type="text" value="请输入" dir="rtl">
+            <input type="text" name="HKcard" value="请输入" dir="rtl">
           </div>
           <div class="package">
             <span>港澳台通行证</span>
-            <input type="text" value="请输入" dir="rtl">
+            <input type="text" name="passid" value="请输入" dir="rtl">
           </div>
           <div class="package">
             <span>其他护照</span>
-            <input type="text" value="请输入" dir="rtl">
+            <input type="text" name="passport" value="请输入" dir="rtl">
           </div>
           <div class="package">
             <span>预约人姓名</span>
-            <input type="text" value="请输入" dir="rtl">
+            <input type="text" name="resername" value="请输入" dir="rtl">
           </div>
           <div class="package">
             <span>邮箱</span>
-            <input type="text" value="请输入" dir="rtl">
+            <input type="text" name="email" value="请输入" dir="rtl">
           </div>
           <div class="package">
             <span>微信</span>
-            <input type="text" value="请输入" dir="rtl">
+            <input type="text" name="weChat" value="请输入" dir="rtl">
           </div>
           <div class="package">
             <span>疾病史</span>
-            <input type="text" value="请输入" dir="rtl">
+            <input type="text" name="disease" value="请输入" dir="rtl">
           </div>
           <div class="package">
             <span>过敏史</span>
-            <input type="text" value="请输入" dir="rtl">
+            <input type="text" name="allergy" value="请输入" dir="rtl">
           </div>
           <div class="package">
             <span>备注</span>
-            <input type="text" value="请输入" dir="rtl">
+            <input type="text" name="remarks" value="请输入" dir="rtl">
           </div>
         </div>
+        <button class="btn-submit">确认支付</button>
       </form>
-      <button class="btn-submit">确认支付</button>
     </div>
   </div>
 </template>
@@ -109,8 +109,172 @@
     name: 'product-order',
     data() {
       return {
-        title: '确认支付'
+        title: '确认支付',
+        sex: '',
+        productId: '',
+        products: [
+          {
+            id: '001',
+            name: '流感4价疫苗01流感4价疫苗流感4价疫苗流感4价疫苗',
+            price: '1000.01',
+            details: '11医疗中心13价肺炎球菌疫苗价格为1250港币+250医生诊金费用',
+            clinics: [
+              {
+                id: '0001',
+                name: '1香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                tel: '11111111',
+              },
+              {
+                id: '0002',
+                name: '2香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                tel: '1122222',
+              },
+              {
+                id: '0003',
+                name: '3香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                tel: '13333333',
+              }
+            ]
+          },
+          {
+            id: '002',
+            name: '流感4价疫苗02',
+            price: '1000.01',
+            details: '22医疗中心13价肺炎球菌疫苗价格为1250港币+250医生诊金费用',
+            clinics: [
+              {
+                id: '0004',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                tel: '11111111'
+              },
+              {
+                id: '0005',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                tel: '1122222'
+              },
+              {
+                id: '0006',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                tel: '13333333'
+              }
+            ]
+          },
+          {
+            id: '003',
+            name: '流感4价疫苗03',
+            price: '1000.01',
+            details: '33医疗中心13价肺炎球菌疫苗价格为1250港币+250医生诊金费用',
+            clinics: [
+              {
+                id: '0007',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                tel: '11111111'
+              },
+              {
+                id: '0008',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                tel: '1122222'
+              },
+              {
+                id: '0009',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                tel: '13333333'
+              }
+            ]
+          },
+          {
+            id: '004',
+            name: '流感4价疫苗04',
+            price: '1000.01',
+            details: '44医疗中心13价肺炎球菌疫苗价格为1250港币+250医生诊金费用',
+            clinics: [
+              {
+                id: '0010',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                tel: '11111111'
+              },
+              {
+                id: '0011',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                tel: '1122222'
+              },
+              {
+                id: '0012',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                tel: '13333333'
+              }
+            ]
+          },
+          {
+            id: '005',
+            name: '流感4价疫苗05',
+            price: '1000.01',
+            details: '55医疗中心13价肺炎球菌疫苗价格为1250港币+250医生诊金费用',
+            clinics: [
+              {
+                id: '0013',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                tel: '11111111'
+              },
+              {
+                id: '0014',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                tel: '1122222'
+              },
+              {
+                id: '0015',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                tel: '13333333'
+              }
+            ]
+          },
+          {
+            id: '006',
+            name: '流感4价疫苗06',
+            price: '1000.01',
+            details: '55医疗中心13价肺炎球菌疫苗价格为1250港币+250医生诊金费用',
+            clinics: [
+              {
+                id: '0016',
+                name: '16香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                tel: '11111111'
+              },
+              {
+                id: '0017',
+                name: '17香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                tel: '1122222'
+              },
+              {
+                id: '0018',
+                name: '18香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                tel: '13333333'
+              }
+            ]
+          }
+        ]
       }
+    },
+    created(){
+      this.productId = this.$route.params.id;
+      console.log(this.productId + 'product确认支付页面传值');
     },
     components: {
       Header

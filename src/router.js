@@ -62,19 +62,19 @@ export default new Router({
       component: Contact
     },
     {
-      path: '/product-order',
+      path: '/product-order/:id',
       component: ProductOrder
     },
     {
-      path: '/product-pay',
+      path: '/product-pay/:id',
       component: ProductPay
     },
     {
-      path: '/doctor-order',
+      path: '/doctor-order/:id',
       component: DoctorOrder
     },
     {
-      path: '/doctor-pay',
+      path: '/doctor-pay/:id',
       component: DoctorPay
     }
   ]

@@ -1,7 +1,7 @@
 <template>
   <div id="product-details">
     <Header :title="title"></Header>
-    <div class="pro-content" v-for="(product, index) in products" :key="index" v-show="product.id ===productId">
+    <div class="pro-content" v-for="(product, index) in products" :key="index" v-show="product.id === productId">
       <div class="product-detail">
         <img class="pro-img" src="./12.png" alt="">
         <div class="pro-details">
@@ -39,7 +39,7 @@
     </div>
     <div class="res-div">
       <span class="pro-address">最低价格：</span><span class="res-price">¥338.00</span>
-      <cube-button class="res-btn" @click="productOrder()">立即预约</cube-button>
+      <cube-button class="res-btn" @click="productOrder(productId)">立即预约</cube-button>
     </div>
   </div>
 </template>
@@ -219,9 +219,12 @@
       console.log(this.productId + 'product页面传值');
     },
     methods: {
-      productOrder() {
+      productOrder:function(id) {
         this.$router.push({
-          path: '/product-order'
+          path: '/product-order/'+ id,
+          params:{
+            productId: id
+          }
         })
       }
     },
@@ -288,6 +291,7 @@
     color #41D7A6
     border-bottom 3px solid #41D7A6
 
+  .pro-detail,
   .pro-tel,
   .pro-address
     color #999999

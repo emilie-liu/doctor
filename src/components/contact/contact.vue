@@ -4,15 +4,15 @@
     <div class="contact-content">
       <span class="contact-title">联系我们</span>
       <p>感谢您使用「港医德」，如您对我们的资讯有任何查询或意见，欢迎您填写一下表格联系我们。</p>
-      <form>
+      <form @submit.prevent="submit">
         <div class="content-title">昵称：</div>
-        <input type="text">
+        <input type="text" nam="username" v-model="inputtext.username">
         <div class="content-title">电话：</div>
-        <input>
+        <input type="text" name="tel" v-model="inputtext.tel">
         <div class="content-title">内容：</div>
-        <textarea></textarea>
+        <textarea name="content" v-model="inputtext.content"></textarea>
+        <button class="btn-submit">提交</button>
       </form>
-      <button class="btn-submit">提交</button>
     </div>
     <home></home>
   </div>
@@ -21,11 +21,23 @@
 <script>
   import Header from '../header/header'
   import Home from '../home/home'
+
   export default {
     name: 'contact',
     data() {
       return {
-        title: '联系我们'
+        title: '联系我们',
+        inputtext: {
+          username: '',
+          tel: '',
+          content: ''
+        }
+      }
+    },
+    methods: {
+      //控制台打印表单数据
+      submit: function () {
+        console.log(this.inputtext);
       }
     },
     components: {
@@ -39,6 +51,8 @@
   .contact-content
     text-align left
     padding 6%
+    position absolute
+    top 40px
 
   .contact-title
     font-size 16px
