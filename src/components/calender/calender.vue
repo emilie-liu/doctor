@@ -211,6 +211,8 @@
 <style lang="stylus">
   .wh_content_all
     text-align center
+    div
+      line-height 40px
 
     .wh_top_changge
       .wh_content_li

@@ -11,11 +11,12 @@
       </ul>
       <div class="tabs-content">
         <ul v-show="curId===0">
-          <li class="tab-details" v-for="(item, index) in products" :key="index" @click="productDetails()">
+          <li class="tab-details" v-for="(product, index) in products" :key="index"
+              @click="productDetails(product.id)">
             <img class="pro-img" src="./11.png" alt="">
             <div class="pro-details">
-              <div class="pro-name">{{item.name}}</div>
-              <div class="pro-price">¥{{item.price}}</div>
+              <div class="pro-name">{{product.name}}</div>
+              <div class="pro-price">¥{{product.price}}</div>
             </div>
           </li>
         </ul>
@@ -29,19 +30,19 @@
           <h1>DNAtab</h1>
         </div>
         <ul v-show="curId===4">
-          <li class="doctor-detail" @click="doctorDetails()">
+          <li class="doctor-detail" v-for="(doctor, index) in doctors" :key="index" @click="doctorDetails(doctor.id)">
             <img class="doc-avatar" src="./doc-avatar.png" alt=""/>
             <div class="doc-detail">
               <div>
-                <span class="doc-name">陈奕迅医生</span>
-                <span class="doc-dept">外科</span>
-                <span class="doc-category">主治医生</span>
+                <span class="doc-name">{{doctor.name}}医生</span>
+                <span class="doc-dept">{{doctor.specName}}</span>
+                <span class="doc-category">{{doctor.doctorName}}</span>
               </div>
               <div>
                 <span class="font-color-12px">预约金:</span>
-                <span class="bar-price">¥1000.01</span>
+                <span class="bar-price">¥{{doctor.barPrice}}</span>
                 <span class="font-color-12px">第二诊疗金:</span>
-                <span class="sec-price">¥1000.01</span>
+                <span class="sec-price">¥{{doctor.secPrice}}</span>
               </div>
             </div>
             <div class="doc-expertise font-color-12px">专长：从事外科20年丰富的男性前列腺疾病，医学博士生导……</div>
@@ -54,11 +55,12 @@
 
 <script type="text/ecmascript-6">
   import Header from '../header/header'
+
   export default {
     name: 'product',
     data() {
       return {
-        title: '医生列表',
+        title: '服务列表',
         curId: 0,
         products: [
           {
@@ -217,6 +219,73 @@
               }
             ]
           }
+        ],
+        doctors: [
+          {
+            id: '001',
+            name: '陈奕迅',
+            specName: '临床肿瘤科',
+            doctorName: '主治医生',
+            imgUrl: '',
+            barPrice: '25',
+            secPrice: '1111.01',
+            desc: '从事外科20年丰富的男性前列腺疾病，医学博士生导师......',
+            specialty: '从事外科20年丰富的男性前列腺疾病，医学博士生导师 从事外科20年丰富的男性前列腺疾病，医学博士生导师从事外科20年丰富的男性前列腺疾病，医学博士生导师',
+            clinicName: '香港综合肿瘤中心',
+            clinicAddress: '香港九龙尖沙咀弥敦道26号11楼全层（尖沙咀喜来登酒店侧）'
+          },
+          {
+            id: '002',
+            name: '陈奕迅',
+            specName: '外科',
+            doctorName: '主治医生',
+            imgUrl: '',
+            barPrice: '25',
+            secPrice: '2222.01',
+            desc: '从事外科20年丰富的男性前列腺疾病，医学博士生导师......',
+            specialty: '从事外科20年丰富的男性前列腺疾病，医学博士生导师 从事外科20年丰富的男性前列腺疾病，医学博士生导师从事外科20年丰富的男性前列腺疾病，医学博士生导师',
+            clinicName: '香港综合肿瘤中心',
+            clinicAddress: '香港九龙尖沙咀弥敦道26号11楼全层（尖沙咀喜来登酒店侧）'
+          },
+          {
+            id: '003',
+            name: '王某某',
+            specName: '内科',
+            doctorName: '专科医生',
+            imgUrl: '',
+            barPrice: '15',
+            secPrice: '3333.01',
+            desc: '从事外科20年丰富的男性前列腺疾病，医学博士生导师......',
+            specialty: '从事外科20年丰富的男性前列腺疾病，医学博士生导师 从事外科20年丰富的男性前列腺疾病，医学博士生导师从事外科20年丰富的男性前列腺疾病，医学博士生导师',
+            clinicName: '香港综合肿瘤中心',
+            clinicAddress: '香港九龙尖沙咀弥敦道26号11楼全层（尖沙咀喜来登酒店侧）'
+          },
+          {
+            id: '004',
+            name: '孟某某',
+            specName: '外科',
+            doctorName: '主治医生',
+            imgUrl: '',
+            barPrice: '25',
+            secPrice: '2222.01',
+            desc: '从事外科20年丰富的男性前列腺疾病，医学博士生导师......',
+            specialty: '从事外科20年丰富的男性前列腺疾病，医学博士生导师 从事外科20年丰富的男性前列腺疾病，医学博士生导师从事外科20年丰富的男性前列腺疾病，医学博士生导师',
+            clinicName: '香港综合肿瘤中心',
+            clinicAddress: '香港九龙尖沙咀弥敦道26号11楼全层（尖沙咀喜来登酒店侧）'
+          },
+          {
+            id: '005',
+            name: '周某某',
+            specName: '内科',
+            doctorName: '专科医生',
+            imgUrl: '',
+            barPrice: '15',
+            secPrice: '3333.01',
+            desc: '从事外科20年丰富的男性前列腺疾病，医学博士生导师......',
+            specialty: '从事外科20年丰富的男性前列腺疾病，医学博士生导师 从事外科20年丰富的男性前列腺疾病，医学博士生导师从事外科20年丰富的男性前列腺疾病，医学博士生导师',
+            clinicName: '香港综合肿瘤中心',
+            clinicAddress: '香港九龙尖沙咀弥敦道26号11楼全层（尖沙咀喜来登酒店侧）'
+          }
         ]
       }
     },
@@ -224,15 +293,23 @@
       Header
     },
     methods: {
-      productDetails() {
+      productDetails: function (id) {
         this.$router.push({
-          path: '/product-details'
+          path: '/product-details/' + id,
+          params: {
+            productId: id
+          }
         })
+        console.log(id)
       },
-      doctorDetails(){
+      doctorDetails: function (id) {
         this.$router.push({
-          path: '/doctor-details'
+          path: '/doctor-details/' + id,
+          params: {
+            doctorId: id
+          }
         })
+        console.log(id)
       }
     }
   }
@@ -246,8 +323,10 @@
     top 44px
     width 100%
     z-index 1
+
   .product-content
     margin-left 2%
+
   .tabs-content
     position: absolute
     top 88px
@@ -280,6 +359,7 @@
   .pro-name
     height 64px
     line-height 1.4
+
   .pro-price
     color: #F4B43E
 
@@ -288,16 +368,20 @@
     padding 4% 3%
     margin-top 2%
     text-align left
+
   .doc-detail
     display inline-block
     line-height 1.8
     width 84%
+
   .doc-avatar
     width 14%
     margin-right 2%
     vertical-align top
+
   .doc-name
     margin-right 4%
+
   .doc-dept
     padding 2px 12px
     background-color #06C7C5
@@ -305,20 +389,26 @@
     border-radius 7px
     font-size 10px
     margin-right 4%
+
   .doc-category
     padding 2px 12px
     background-color #2EA9E2
     color #fff
     border-radius 7px
     font-size 10px
+
   .doc-expertise
     margin-top 2%
+
   .font-color-12px
     color: #999999
     font-size 12px
+
   .bar-price
     color: #06C7C5
     font-size 12px
+    margin-right 2%
+
   .sec-price
     color: #F4B43E
     font-size 12px

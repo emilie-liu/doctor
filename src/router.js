@@ -50,11 +50,11 @@ export default new Router({
       ]
     },
     {
-      path: '/product-details',
+      path: '/product-details/:id',
       component: ProductDetails
     },
     {
-      path: '/doctor-details',
+      path: '/doctor-details/:id',
       component: DoctorDetails
     },
     {

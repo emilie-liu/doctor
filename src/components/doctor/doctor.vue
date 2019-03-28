@@ -41,7 +41,7 @@
           :key="item.id"
           :label="item.label">
           <ul>
-            <li class="doctor-li" v-for="doctor in item.doctors" @click="doctorDetails()">
+            <li class="doctor-li" v-for="doctor in item.doctors" @click="doctorDetails(doctor.id)">
               <div>
                 <img class="doctor-avatar" src="" alt="" width="46" height="46px">
                 <div class="doctor-into">
@@ -355,10 +355,14 @@
       this.selectedLabel = this.specialist[0].label
     },
     methods: {
-      doctorDetails() {
+      doctorDetails(id) {
         this.$router.push({
-          path: '/doctor-details'
+          path: '/doctor-details/'+id,
+          params:{
+            doctorId:id
+          }
         })
+        console.log(id)
       }
     },
     components: {

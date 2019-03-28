@@ -1,13 +1,13 @@
 <template>
   <div id="product-details">
     <Header :title="title"></Header>
-    <div class="pro-content">
+    <div class="pro-content" v-for="(product, index) in products" :key="index" v-show="product.id ===productId">
       <div class="product-detail">
         <img class="pro-img" src="./12.png" alt="">
         <div class="pro-details">
-          <div class="pro-name">香港13价肺炎疫苗</div>
-          <div class="pro-detail">医疗中心13价肺炎球菌疫苗价格为港币+250医生诊金费用……</div>
-          <div class="pro-price">¥100.01</div>
+          <div class="pro-name">{{product.name}}</div>
+          <div class="pro-detail">{{product.details}}</div>
+          <div class="pro-price">¥{{product.price}}</div>
         </div>
       </div>
       <div class="pro-tabs">
@@ -18,16 +18,16 @@
         </ul>
         <div class="tab-content">
           <div v-show="curId===0">
-            <div class="tab-detail">
+            <div class="tab-detail" v-for="(clinic, index) in product.clinics" :key="index">
               <img class="pro-img" src="./15.png" alt="">
               <div class="pro-details">
-                <div class="pro-name">香港13价肺炎疫苗</div>
-                <div class="pro-address">地址：上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号</div>
-                <div class="pro-tel">联系电话：4008831114</div>
-                <div class="pro-price">¥100.01</div>
+                <div class="pro-name">{{clinic.name}}</div>
+                <div class="pro-address">地址：{{clinic.address}}</div>
+                <div class="pro-tel">联系电话：{{clinic.tel}}</div>
+                <div class="pro-price">¥{{product.price}}</div>
               </div>
             </div>
-              </div>
+          </div>
           <div v-show="curId===1">
             <h1>产品详情tab</h1>
           </div>
@@ -52,8 +52,171 @@
     data() {
       return {
         curId: 0,
-        title: '服务详情'
+        title: '服务详情',
+        productId: '',
+        products: [
+          {
+            id: '001',
+            name: '流感4价疫苗01流感4价疫苗流感4价疫苗流感4价疫苗',
+            price: '1000.01',
+            details: '11医疗中心13价肺炎球菌疫苗价格为1250港币+250医生诊金费用',
+            clinics: [
+              {
+                id: '0001',
+                name: '1香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                tel: '11111111',
+              },
+              {
+                id: '0002',
+                name: '2香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                tel: '1122222',
+              },
+              {
+                id: '0003',
+                name: '3香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                tel: '13333333',
+              }
+            ]
+          },
+          {
+            id: '002',
+            name: '流感4价疫苗02',
+            price: '1000.01',
+            details: '22医疗中心13价肺炎球菌疫苗价格为1250港币+250医生诊金费用',
+            clinics: [
+              {
+                id: '0004',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                tel: '11111111'
+              },
+              {
+                id: '0005',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                tel: '1122222'
+              },
+              {
+                id: '0006',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                tel: '13333333'
+              }
+            ]
+          },
+          {
+            id: '003',
+            name: '流感4价疫苗03',
+            price: '1000.01',
+            details: '33医疗中心13价肺炎球菌疫苗价格为1250港币+250医生诊金费用',
+            clinics: [
+              {
+                id: '0007',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                tel: '11111111'
+              },
+              {
+                id: '0008',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                tel: '1122222'
+              },
+              {
+                id: '0009',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                tel: '13333333'
+              }
+            ]
+          },
+          {
+            id: '004',
+            name: '流感4价疫苗04',
+            price: '1000.01',
+            details: '44医疗中心13价肺炎球菌疫苗价格为1250港币+250医生诊金费用',
+            clinics: [
+              {
+                id: '0010',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                tel: '11111111'
+              },
+              {
+                id: '0011',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                tel: '1122222'
+              },
+              {
+                id: '0012',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                tel: '13333333'
+              }
+            ]
+          },
+          {
+            id: '005',
+            name: '流感4价疫苗05',
+            price: '1000.01',
+            details: '55医疗中心13价肺炎球菌疫苗价格为1250港币+250医生诊金费用',
+            clinics: [
+              {
+                id: '0013',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                tel: '11111111'
+              },
+              {
+                id: '0014',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                tel: '1122222'
+              },
+              {
+                id: '0015',
+                name: '香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                tel: '13333333'
+              }
+            ]
+          },
+          {
+            id: '006',
+            name: '流感4价疫苗06',
+            price: '1000.01',
+            details: '55医疗中心13价肺炎球菌疫苗价格为1250港币+250医生诊金费用',
+            clinics: [
+              {
+                id: '0016',
+                name: '16香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                tel: '11111111'
+              },
+              {
+                id: '0017',
+                name: '17香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                tel: '1122222'
+              },
+              {
+                id: '0018',
+                name: '18香港安生医疗中心',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                tel: '13333333'
+              }
+            ]
+          }
+        ]
       }
+    },
+    created() {
+      this.productId = this.$route.params.id;
+      console.log(this.productId + 'product页面传值');
     },
     methods: {
       productOrder() {
@@ -73,6 +236,7 @@
     position absolute
     top 44px
     margin-left 2%
+
   .product-detail
   .tab-detail
     background-color #fff
@@ -90,13 +254,14 @@
 
   .tabs
     position fixed
-    top 158px
+    top 170px
     width 100%
     z-index 1
 
   .tab-content
     position relative
-    top 160px
+    top 171px
+
   .pro-img
     width 34%
     margin-right 2%

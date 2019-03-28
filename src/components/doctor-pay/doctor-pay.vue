@@ -109,6 +109,7 @@
 
 <script>
   import Header from '../header/header'
+
   // import Dialog from './dialog'
 
   export default {
@@ -196,145 +197,146 @@
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
-  .order-content
-    position absolute
-    top 44px
-    margin-left 2%
-    width 100%
+  #doctor-pay
+    .order-content
+      position absolute
+      top 44px
+      margin-left 2%
+      width 100%
 
-  .order-module
-    background-color #fff
-    margin-bottom 8px
-    text-align left
-    padding 0 20px
+    .order-module
+      background-color #fff
+      margin-bottom 8px
+      text-align left
+      padding 0 20px
 
-    .package
-      border-bottom 1px solid #F8F8F8
-      line-height 50px
+      .package
+        border-bottom 1px solid #F8F8F8
+        line-height 50px
 
-      &:last-child
-        border-bottom none
+        &:last-child
+          border-bottom none
 
-      input
-        float right
-        width 60%
-        color #999999
-        line-height 48px
+        input
+          float right
+          width 60%
+          color #999999
+          line-height 48px
 
-      .cube-select
-        width 60%
-        border none
-        display inline-block
-        float right
-        line-height 30px
-        text-align right
-        color #999999
-
-    >>> .date
-      width 10% !important
-      float left !important
-
-    >>> .cube-radio
-      padding 0
-
-  >>> .doctor-package
-    padding 4% 0
-    line-height 20px !important
-
-    .avatar-img
-      margin-right 2%
-
-    .doctor-intro
-      display inline-block
-      vertical-align top
-
-      div
-        line-height 1.6
-
-        .doctor-dept
-          background-color #06C7C5
-          color #fff
-          padding 2px 10px
-          border-radius 8px
-          font-size 10px
-          margin-right 4%
-
-
-        .doctor-type
-          background-color #2EA9E2
-          color #fff
-          padding 2px 10px
-          border-radius 8px
-          font-size 10px
-
-  >>> .doctor-job
-    margin-top 4px
-
-  >>> .font-color
-    color #999999
-
-  .btn-submit
-    background-color #06C7C5
-    border-radius 6px
-    width 30%
-    margin 20% 10%
-    color #fff
-    line-height 40px
-    border none
-
-  .btn-submit-cancel
-    background-color #F39281
-    border-radius 6px
-    width 30%
-    margin 20% 10%
-    color #fff
-    line-height 40px
-    border none
-
-  >>> .package
-    .sex
-      width 60%
-      display inline-block
-      text-align right
-      float right
-
-      div
-        width 30%
-        display inline-block
-
-        .sex-input
+        .cube-select
+          width 60%
+          border none
           display inline-block
-          width 10%
-          float none
-          margin-left 8%
-          vertical-align middle
-          margin-left -2%
+          float right
+          line-height 30px
+          text-align right
+          color #999999
 
-  >>> input[type="radio"]
-    position absolute
-    clip rect(0, 0, 0, 0)
+      >>> .date
+        width 10% !important
+        float left !important
 
-    ~ label
-      &:before
-        content "\a0"
+      >>> .cube-radio
+        padding 0
+
+    >>> .doctor-package
+      padding 4% 0
+      line-height 20px !important
+
+      .avatar-img
+        margin-right 2%
+
+      .doctor-intro
         display inline-block
-        vertical-align middle
-        width 8px
-        height 8px
-        margin-right 4px
-        border-radius 50%
-        border 1px solid #999999
-        line-height 1
-        text-indent 0.15em
-        padding 3px
+        vertical-align top
 
-  >>> input[type="radio"]:checked
-    ~ label
-      &:before
-        background-color #2EA9E2
-        border 1px solid #2EA9E2
-        background-clip content-box
-        padding 3px
+        div
+          line-height 1.6
+
+          .doctor-dept
+            background-color #06C7C5
+            color #fff
+            padding 2px 10px
+            border-radius 8px
+            font-size 10px
+            margin-right 4%
+
+
+          .doctor-type
+            background-color #2EA9E2
+            color #fff
+            padding 2px 10px
+            border-radius 8px
+            font-size 10px
+
+    >>> .doctor-job
+      margin-top 4px
+
+    >>> .font-color
+      color #999999
+
+    .btn-submit
+      background-color #06C7C5
+      border-radius 6px
+      width 30%
+      margin 20% 10%
+      color #fff
+      line-height 40px
+      border none
+
+    .btn-submit-cancel
+      background-color #F39281
+      border-radius 6px
+      width 30%
+      margin 20% 10%
+      color #fff
+      line-height 40px
+      border none
+
+    >>> .package
+      .sex
+        width 60%
+        display inline-block
+        text-align right
+        float right
+
+        div
+          width 30%
+          display inline-block
+
+          .sex-input
+            display inline-block
+            width 10%
+            float none
+            margin-left 8%
+            vertical-align middle
+            margin-left -2%
+
+    >>> input[type="radio"]
+      position absolute
+      clip rect(0, 0, 0, 0)
+
+      ~ label
+        &:before
+          content "\a0"
+          display inline-block
+          vertical-align middle
+          width 8px
+          height 8px
+          margin-right 4px
+          border-radius 50%
+          border 1px solid #999999
+          line-height 1
+          text-indent 0.15em
+          padding 3px
+
+    >>> input[type="radio"]:checked
+      ~ label
+        &:before
+          background-color #2EA9E2
+          border 1px solid #2EA9E2
+          background-clip content-box
+          padding 3px
 
 
 </style>
