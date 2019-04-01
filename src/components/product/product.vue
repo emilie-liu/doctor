@@ -10,31 +10,47 @@
         <li class="tab-item" @click="curId=4" :class="{'cur':curId===4}">第二治疗</li>
       </ul>
       <div class="tabs-content">
-        <ul v-show="curId===0">
-          <li class="tab-details" v-for="(product, index) in products1" :key="index"
-              @click="productDetails(product.id)">
-            <img class="pro-img" src="./11.png" alt="">
-            <div class="pro-details">
-              <div class="pro-name">{{product.name}}</div>
-              <div class="pro-price">¥{{product.price}}</div>
-            </div>
-          </li>
-        </ul>
-        <div v-show="curId===1">
-          <li class="tab-details" v-for="(product, index) in products2" :key="index"
-              @click="productDetails(product.id)">
-            <img class="pro-img" src="./10.png" alt="">
-            <div class="pro-details">
-              <div class="pro-name">{{product.name}}</div>
-              <div class="pro-price">¥{{product.price}}</div>
-            </div>
-          </li>
-        </div>
-        <ul v-show="curId===2">
-          <h1>体检tab</h1>
-        </ul>
-        <div v-show="curId===3">
-          <h1>DNAtab</h1>
+        <div v-for="(list, index) in productlist" :key="index" :label="list.label">
+          <ul v-show="curId===0">
+            <li class="tab-details" v-for="(product1, index) in list.vaccine" :key="index"
+                @click="productDetails(product1.id)">
+              <img class="pro-img" src="./11.png" alt="">
+              <div class="pro-details">
+                <div class="pro-name">{{product1.name}}</div>
+                <div class="pro-price">¥{{product1.price}}</div>
+              </div>
+            </li>
+          </ul>
+          <ul v-show="curId===1">
+            <li class="tab-details" v-for="(product2, index) in list.beauty" :key="index"
+                @click="productDetails(product2.id)">
+              <img class="pro-img" src="./10.png" alt="">
+              <div class="pro-details">
+                <div class="pro-name">{{product2.name}}</div>
+                <div class="pro-price">¥{{product2.price}}</div>
+              </div>
+            </li>
+          </ul>
+          <ul v-show="curId===2">
+            <li class="tab-details" v-for="(product3, index) in list.examination" :key="index"
+                @click="productDetails(product3.id)">
+              <img class="pro-img" src="./6.png" alt="">
+              <div class="pro-details">
+                <div class="pro-name">{{product3.name}}</div>
+                <div class="pro-price">¥{{product3.price}}</div>
+              </div>
+            </li>
+          </ul>
+          <ul v-show="curId===3">
+            <li class="tab-details" v-for="(product4, index) in list.DNA" :key="index"
+                @click="productDetails(product4.id)">
+              <img class="pro-img" src="./3.png" alt="">
+              <div class="pro-details">
+                <div class="pro-name">{{product4.name}}</div>
+                <div class="pro-price">¥{{product4.price}}</div>
+              </div>
+            </li>
+          </ul>
         </div>
         <ul v-show="curId===4">
           <li class="doctor-detail" v-for="(doctor, index) in doctors" :key="index" @click="doctorDetails(doctor.id)">
@@ -72,7 +88,7 @@
         productlist: [
           {
             label: '疫苗',
-            vaccine:[
+            vaccine: [
               {
                 id: '001',
                 name: '流感4价疫苗01流感4价疫苗流感4价疫苗流感4价疫苗',
@@ -233,27 +249,27 @@
           },
           {
             label: '医美',
-            Medical:[
+            beauty: [
               {
-                id: '001',
+                id: '007',
                 name: '定制闪耀迷人明星眼',
                 price: '16800',
                 details: '11定制闪耀迷人明星眼+250医生诊金费用',
                 clinics: [
                   {
-                    id: '0001',
+                    id: '0019',
                     name: '1香港安生医疗中心',
                     address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
                     tel: '11111111'
                   },
                   {
-                    id: '0002',
+                    id: '0020',
                     name: '2香港安生医疗中心',
                     address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
                     tel: '1122222'
                   },
                   {
-                    id: '0003',
+                    id: '0021',
                     name: '3香港安生医疗中心',
                     address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
                     tel: '13333333'
@@ -261,25 +277,25 @@
                 ]
               },
               {
-                id: '002',
+                id: '008',
                 name: '鼻综合整形术',
                 price: '1000.01',
                 details: '22鼻综合整形术',
                 clinics: [
                   {
-                    id: '0004',
+                    id: '0022',
                     name: '香港安生医疗中心',
                     address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
                     tel: '11111111'
                   },
                   {
-                    id: '0005',
+                    id: '0023',
                     name: '香港安生医疗中心',
                     address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
                     tel: '1122222'
                   },
                   {
-                    id: '0006',
+                    id: '0024',
                     name: '香港安生医疗中心',
                     address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
                     tel: '13333333'
@@ -287,25 +303,191 @@
                 ]
               },
               {
-                id: '003',
+                id: '009',
                 name: '水光针',
                 price: '1000.01',
                 details: '33水光针',
                 clinics: [
                   {
-                    id: '0007',
+                    id: '0025',
                     name: '香港安生医疗中心',
                     address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
                     tel: '11111111'
                   },
                   {
-                    id: '0008',
+                    id: '0026',
                     name: '香港安生医疗中心',
                     address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
                     tel: '1122222'
                   },
                   {
-                    id: '0009',
+                    id: '0027',
+                    name: '香港安生医疗中心',
+                    address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                    tel: '13333333'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            label: '体检',
+            examination: [
+              {
+                id: '010',
+                name: '卓建医疗-肝功能检查',
+                price: '1520.00',
+                details: '11定卓建医疗-肝功能检查',
+                clinics: [
+                  {
+                    id: '0028',
+                    name: '1香港安生医疗中心',
+                    address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                    tel: '11111111'
+                  },
+                  {
+                    id: '0029',
+                    name: '2香港安生医疗中心',
+                    address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                    tel: '1122222'
+                  },
+                  {
+                    id: '0030',
+                    name: '3香港安生医疗中心',
+                    address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                    tel: '13333333'
+                  }
+                ]
+              },
+              {
+                id: '011',
+                name: '心脏健康检查',
+                price: '1000.01',
+                details: '22心脏健康检查',
+                clinics: [
+                  {
+                    id: '0031',
+                    name: '香港安生医疗中心',
+                    address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                    tel: '11111111'
+                  },
+                  {
+                    id: '0032',
+                    name: '香港安生医疗中心',
+                    address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                    tel: '1122222'
+                  },
+                  {
+                    id: '0033',
+                    name: '香港安生医疗中心',
+                    address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                    tel: '13333333'
+                  }
+                ]
+              },
+              {
+                id: '012',
+                name: '牙齿健康检查',
+                price: '1000.01',
+                details: '33牙齿健康检查',
+                clinics: [
+                  {
+                    id: '0034',
+                    name: '香港安生医疗中心',
+                    address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                    tel: '11111111'
+                  },
+                  {
+                    id: '0035',
+                    name: '香港安生医疗中心',
+                    address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                    tel: '1122222'
+                  },
+                  {
+                    id: '0036',
+                    name: '香港安生医疗中心',
+                    address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                    tel: '13333333'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            label: 'DNA',
+            DNA: [
+              {
+                id: '013',
+                name: '卓建医疗-肝功能检查',
+                price: '1520.00',
+                details: '11定卓建医疗-肝功能检查',
+                clinics: [
+                  {
+                    id: '0037',
+                    name: '1香港安生医疗中心',
+                    address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                    tel: '11111111'
+                  },
+                  {
+                    id: '0038',
+                    name: '2香港安生医疗中心',
+                    address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                    tel: '1122222'
+                  },
+                  {
+                    id: '0039',
+                    name: '3香港安生医疗中心',
+                    address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                    tel: '13333333'
+                  }
+                ]
+              },
+              {
+                id: '014',
+                name: '心脏健康检查',
+                price: '1000.01',
+                details: '22心脏健康检查',
+                clinics: [
+                  {
+                    id: '0040',
+                    name: '香港安生医疗中心',
+                    address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                    tel: '11111111'
+                  },
+                  {
+                    id: '0041',
+                    name: '香港安生医疗中心',
+                    address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                    tel: '1122222'
+                  },
+                  {
+                    id: '0042',
+                    name: '香港安生医疗中心',
+                    address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
+                    tel: '13333333'
+                  }
+                ]
+              },
+              {
+                id: '015',
+                name: '牙齿健康检查',
+                price: '1000.01',
+                details: '33牙齿健康检查',
+                clinics: [
+                  {
+                    id: '0043',
+                    name: '香港安生医疗中心',
+                    address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                    tel: '11111111'
+                  },
+                  {
+                    id: '0044',
+                    name: '香港安生医疗中心',
+                    address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇200号',
+                    tel: '1122222'
+                  },
+                  {
+                    id: '0045',
                     name: '香港安生医疗中心',
                     address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
                     tel: '13333333'
