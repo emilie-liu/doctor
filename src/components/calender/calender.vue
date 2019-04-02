@@ -249,4 +249,7 @@
           background-color #0AC5C6
           color #fff
           border-radius 50%
+        .wh_want_dayhide
+          color #999999
+
 </style>

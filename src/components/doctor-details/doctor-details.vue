@@ -42,7 +42,7 @@
         <div class="date">
           <div class="package">预约排期</div>
           <div class="package">
-            <Calender></Calender>
+            <Calender :agoDayHide="1555323405"></Calender>
           </div>
           <div class="dates">
             <div>
@@ -70,7 +70,6 @@
 <script>
   import Header from '../header/header'
   import Calender from '../calender/calender'
-  // import doctor from '../product/product'
 
   export default {
     name: 'doctor-details',
@@ -333,10 +332,12 @@
       }
     },
     created() {
+      //接收医生列表id
       this.doctorId = this.$route.params.id;
       console.log(this.doctorId + 'product页面传值');
     },
     methods: {
+      //医生详情跳转订单连接
       DoctorOrder: function (id) {
         this.$router.push({
           path: '/doctor-order/' + id,

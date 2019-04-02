@@ -2,7 +2,7 @@
   <div id="doctor-pay">
     <Header :title="title"></Header>
     <div class="order-content">
-      <form action="">
+      <form action="product-order.vue" method="get">
         <div class="order-module"  v-for="(doctor, index) in doctors" :key="index" v-show="doctor.id === doctorId">
           <div class="package doctor-package">
             <img class="avatar-img" src="./doc-avatar.png" alt="" width="70" height="70">
@@ -100,21 +100,27 @@
             <input type="text" name="remarks" value="请输入" dir="rtl">
           </div>
         </div>
-        <button class="btn-submit-cancel" @click="showSlot()">取消订单</button>
-        <button class="btn-submit">支付</button>
       </form>
+      <button class="btn-submit-cancel" @click="vm.showDialog=true">取消订单</button>
+      <button class="btn-submit">支付</button>
     </div>
+    <Dialog class="exam" @closeDialog="close" v-if="vm.showDialog"></Dialog>
   </div>
 </template>
 
 <script>
   import Header from '../header/header'
+  import Dialog from '../dialog/dialog'
 
   export default {
     name: 'doctor-pay',
     data() {
       return {
         title: '确认支付',
+        vm :{
+          showDialog: false
+        },
+
         sex: '',
         doctorId: '',
         doctors: [
@@ -369,81 +375,20 @@
       }
     },
     created(){
+      //接收路由传递的id
       this.doctorId = this.$route.params.id;
       console.log(this.doctorId + '医生订单支付页面传值');
     },
     methods: {
-      showBtn() {
-        this.$createDialog({
-          type: 'confirm',
-          icon: 'cubeic-alert',
-          content: '是否确定取消该订单！',
-          confirmBtn: {
-            text: '确定',
-            active: true,
-            disabled: false,
-            href: 'javascript:;'
-          },
-          cancelBtn: {
-            text: '取消',
-            active: false,
-            disabled: false,
-            href: 'javascript:;'
-          }
-          /*       ,
-                 onConfirm: () => {
-                   this.$createToast({
-                     type: 'warn',
-                     time: 1000,
-                     txt: '点击确认按钮'
-                   }).show()
-                 },
-                 onCancel: () => {
-                   this.$createToast({
-                     type: 'warn',
-                     time: 1000,
-                     txt: '点击取消按钮'
-                   }).show()
-                 }*/
-        }).show()
-      },
-      showSlot() {
-        this.$createDialog({
-          type: 'confirm',
-          confirmBtn: {
-            text: '确认',
-            active: true,
-            disabled: false,
-            href: 'javascript:;'
-          },
-          cancelBtn: {
-            text: '取消',
-            active: false,
-            disabled: false,
-            href: 'javascript:;'
-          }
-        }, (createElement) => {
-          return [
-            createElement('div', {
-              'class': {
-                'my-title': true
-              },
-              slot: 'title'
-            }, [
-              createElement('div', {
-                'class': {
-                  'my-title-img': true
-                }
-              }),
-              createElement('p', '是否确定取消该订单！')
-            ])
-          ]
-        }).show()
+      //是否取消订单提示框
+      close(){
+        this.vm.showDialog = false;
       }
     },
-
+    //注册组件
     components: {
-      Header
+      Header,
+      Dialog
     }
   }
 </script>
@@ -589,6 +534,5 @@
           border 1px solid #2EA9E2
           background-clip content-box
           padding 3px
-
 
 </style>
