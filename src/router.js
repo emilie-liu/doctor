@@ -10,6 +10,9 @@ import ProductOrder from './components/product-order/product-order'
 import ProductPay from './components/product-pay/product-pay'
 import DoctorOrder from './components/doctor-order/doctor-order'
 import DoctorPay from './components/doctor-pay/doctor-pay'
+import Reservation from './components/reservation/reservation'
+import User from './components/user/user'
+import Test from './components/test/test'
 
 Vue.use(Router)
 
@@ -76,6 +79,18 @@ export default new Router({
     {
       path: '/doctor-pay/:id',
       component: DoctorPay
+    },
+    {
+      path: '/reservation',
+      component: Reservation
+    },
+    {
+      path: '/test',
+      component: Test
+    },
+    {
+      path: '/user',
+      component: User
     }
   ]
 })

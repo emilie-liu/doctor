@@ -42,7 +42,7 @@
         <div class="date">
           <div class="package">预约排期</div>
           <div class="package">
-            <Calender :agoDayHide="1555323405"></Calender>
+            <Calender></Calender>
           </div>
           <div class="dates">
             <div>
