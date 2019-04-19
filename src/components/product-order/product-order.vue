@@ -341,9 +341,11 @@
         border none
         display inline-block
         float right
-        line-height 30px
+        line-height 28px
         text-align right
         color #999999
+        &:after
+          border none
 
     >>> .dates
       div
