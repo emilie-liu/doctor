@@ -26,7 +26,7 @@
   #header
     line-height 42px
     text-align left
-    padding 0 6%
+    padding 0 3%
     background-color #F8F8F8
     position fixed
     top 0

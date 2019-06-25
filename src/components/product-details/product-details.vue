@@ -541,7 +541,7 @@
     line-height 50px
     width: 100%
     bottom 0
-    box-shadow: 0px 2px 8px 0px rgba(117, 117, 117, 0.5)
+    box-shadow: 0 2px 8px 0 rgba(117, 117, 117, 0.5)
 
   .res-btn
     width 30%

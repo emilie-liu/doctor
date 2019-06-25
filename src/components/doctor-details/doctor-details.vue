@@ -437,6 +437,7 @@
 
     >>> .number-color
       color #0AC5C6
+
     >>> .intro-hospital
     >>> .intro-honor
     >>> .intro-specialty
@@ -516,5 +517,5 @@
     color #fff
     line-height 40px
     border none
-
+    font-size 14px
 </style>

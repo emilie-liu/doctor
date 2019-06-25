@@ -125,7 +125,7 @@
               {
                 id: '004',
                 name: '李某某',
-                specName: '外科',
+                specName: '妇科及妇产科',
                 doctorName: '主治医生',
                 imgUrl: '',
                 barPrice: '25',
@@ -361,7 +361,7 @@
           params:{
             doctorId:id
           }
-        })
+        });
         console.log(id)
       }
     },
@@ -374,7 +374,7 @@
 <style scoped lang="stylus" rel="stylesheet/stylus">
   .doctor-nav-wrapper
     display flex
-    height calc(100% -1px)
+    height calc(100% - 44px)
     position: absolute
     bottom 0
     top 44px

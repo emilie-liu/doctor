@@ -14,21 +14,21 @@
           </div>
           <div class="package">
             <span>预约类型</span>
-            <input type="text" name="outpatient" value="门诊预约" dir="rtl">
+            <input type="text" name="outpatient" value="门诊预约" readonly="readonly">
           </div>
           <div class="package">
             <span>支付金额</span>
-            <input type="text" name="barprice" :value="doctor.barPrice" dir="rtl">
+            <input type="text" name="barprice" :value="doctor.barPrice" readonly="readonly">
           </div>
           <div class="package">
             <span>实付金额</span>
-            <input type="text" name="secprice"  :value="doctor.secPrice" dir="rtl">
+            <input type="text" name="secprice"  :value="doctor.secPrice" readonly="readonly">
           </div>
         </div>
         <div class="order-module">
           <div class="package">
             <span>订单号</span>
-            <input type="text" name="number" value="00109653632636322" dir="rtl">
+            <input type="text" name="number" value="00109653632636322" readonly="readonly">
           </div>
           <div class="package">
             <span>就诊时间</span>
@@ -36,15 +36,15 @@
           </div>
           <div class="package">
             <span>就诊人姓名</span>
-            <input type="text" name="username" value="请输入姓名" dir="rtl">
+            <input type="text" name="username" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>手机号码</span>
-            <input type="text" name="tel" value="请输入" dir="rtl">
+            <input type="text" name="tel" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>身份证号码</span>
-            <input type="text" name="cardid" value="请输入" dir="rtl">
+            <input type="text" name="cardid" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>性别</span>
@@ -61,43 +61,43 @@
           </div>
           <div class="package">
             <span>年龄</span>
-            <input type="text" name="age" value="请输入" dir="rtl">
+            <input type="text" name="age" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>香港身份证</span>
-            <input type="text" name="HKcard" value="请输入" dir="rtl">
+            <input type="text" name="HKcard" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>港澳台通行证</span>
-            <input type="text" name="passid" value="请输入" dir="rtl">
+            <input type="text" name="passid" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>其他护照</span>
-            <input type="text" name="passport" value="请输入" dir="rtl">
+            <input type="text" name="passport" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>预约人姓名</span>
-            <input type="text" name="resername" value="请输入" dir="rtl">
+            <input type="text" name="resername" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>邮箱</span>
-            <input type="text" name="email" value="请输入" dir="rtl">
+            <input type="text" name="email" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>微信</span>
-            <input type="text" name="weChat" value="请输入" dir="rtl">
+            <input type="text" name="weChat" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>疾病史</span>
-            <input type="text" name="disease" value="请输入" dir="rtl">
+            <input type="text" name="disease" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>过敏史</span>
-            <input type="text" name="allergy" value="请输入" dir="rtl">
+            <input type="text" name="allergy" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>备注</span>
-            <input type="text" name="remarks" value="请输入" dir="rtl">
+            <input type="text" name="remarks" value="" placeholder="请输入">
           </div>
         </div>
       </form>
@@ -419,6 +419,7 @@
           width 60%
           color #999999
           line-height 48px
+          text-align right
 
         .cube-select
           width 60%

@@ -14,29 +14,29 @@
           </div>
           <div class="package">
             <span>预约时间</span>
-            <input type="text" name="time" value="09:00～12:00 2019-01-23" dir="rtl">
+            <input type="text" name="time" value="09:00～12:00 2019-01-23" readonly="readonly">
           </div>
           <div class="package">
             <span>支付金额</span>
-            <input type="text" name="barPrice" :value="doctor.barPrice" dir="rtl">
+            <input type="text" name="barPrice" :value="doctor.barPrice" readonly="readonly">
           </div>
           <div class="package">
             <span>实付金额</span>
-            <input type="text" name="secPrice" :value="doctor.secPrice" dir="rtl">
+            <input type="text" name="secPrice" :value="doctor.secPrice" readonly="readonly">
           </div>
         </div>
         <div class="order-module">
           <div class="package">
             <span>就诊人姓名<i>*</i></span>
-            <input type="text" name="username" value="请输入姓名" dir="rtl">
+            <input type="text" name="username" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>手机号码<i>*</i></span>
-            <input type="text" name="tel" value="请输入" dir="rtl">
+            <input type="text" name="tel" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>身份证号码<i>*</i></span>
-            <input type="text" name="cardid" value="请输入" dir="rtl">
+            <input type="text" name="cardid" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>性别<i>*</i></span>
@@ -53,43 +53,43 @@
           </div>
           <div class="package">
             <span>年龄</span>
-            <input type="text" name="age" value="请输入" dir="rtl">
+            <input type="text" name="age" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>香港身份证</span>
-            <input type="text" name="HKcard" value="请输入" dir="rtl">
+            <input type="text" name="HKcard" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>港澳台通行证</span>
-            <input type="text" name="passid" value="请输入" dir="rtl">
+            <input type="text" name="passid" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>其他护照</span>
-            <input type="text" name="passport" value="请输入" dir="rtl">
+            <input type="text" name="passport" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>预约人姓名</span>
-            <input type="text" name="resername" value="请输入" dir="rtl">
+            <input type="text" name="resername" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>邮箱</span>
-            <input type="text" name="email" value="请输入" dir="rtl">
+            <input type="text" name="email" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>微信</span>
-            <input type="text" name="weChat" value="请输入" dir="rtl">
+            <input type="text" name="weChat" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>疾病史</span>
-            <input type="text" name="disease" value="请输入" dir="rtl">
+            <input type="text" name="disease" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>过敏史</span>
-            <input type="text" name="allergy" value="请输入" dir="rtl">
+            <input type="text" name="allergy" value="" placeholder="请输入">
           </div>
           <div class="package">
             <span>备注</span>
-            <input type="text" name="remarks" value="请输入" dir="rtl">
+            <input type="text" name="remarks" value="" placeholder="请输入">
           </div>
         </div>
         <button class="btn-submit" @click="DoctorPay(doctorId)">提交订单</button>
@@ -404,6 +404,7 @@
         width 60%
         color #999999
         line-height 48px
+        text-align right
 
     >>> i
       color #FF6F5C
