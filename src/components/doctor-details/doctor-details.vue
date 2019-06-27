@@ -46,18 +46,20 @@
           </div>
           <div class="dates">
             <div>
-              <input class="sex-input" type="radio" id="mor" value="9:00～12:00" v-model="date">
+              <input v-if="mornumber>=10"  class="sex-input" type="radio" id="mor" value="9:00～12:00" v-model="date" disabled="disabled">
+              <input  v-else class="sex-input" type="radio" id="mor" value="9:00～12:00" v-model="date">
               <label for="mor">9:00～12:00</label>
-              <span class="number-color" v-if="mornumber<10">余5</span>
-              <span class="font-color" v-if="mornumber>=10">已满</span>
+              <span class="number-color" v-if="mornumber<10" >余{{10-mornumber}}</span>
+              <span class="font-color"v-else>已满</span>
               <span class="sec-price">¥338.00</span>
             </div>
             <div>
-              <input class="sex-input" type="radio" id="after" value="15:00～18:00" v-model="date">
+              <input v-if="afternumber>=10" disabled="disabled" class="sex-input" type="radio" id="after" value="15:00～18:00" v-model="date">
+              <input v-else class="sex-input" type="radio" id="after" value="15:00～18:00" v-model="date">
               <label for="after">15:00～18:00</label>
-              <span class="number-color" v-if="afternumber<10">余10</span>
-              <span class="font-color" v-if="afternumber>=10">已满</span>
-              <span class="sec-price">¥338.00</span>
+              <span class="number-color" v-if="afternumber<10">余{{10-afternumber}}</span>
+              <span class="font-color" v-else>已满</span>
+              <span class="sec-price">¥366.00</span>
             </div>
           </div>
         </div>
@@ -78,8 +80,8 @@
         title: '医生详情',
         date: '',
         doctorId: '',
-        mornumber: 4,
-        afternumber: 14,
+        mornumber: 10,
+        afternumber: 6,
         doctors: [
           {
             id: '001',
@@ -346,6 +348,7 @@
           }
         })
       }
+
     },
     components: {
       Header,

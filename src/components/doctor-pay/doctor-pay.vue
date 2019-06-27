@@ -2,7 +2,7 @@
   <div id="doctor-pay">
     <Header :title="title"></Header>
     <div class="order-content">
-      <form action="product-order.vue" method="get">
+      <form action="doctor-pay.vue" method="get">
         <div class="order-module"  v-for="(doctor, index) in doctors" :key="index" v-show="doctor.id === doctorId">
           <div class="package doctor-package">
             <img class="avatar-img" src="./doc-avatar.png" alt="" width="70" height="70">
@@ -100,9 +100,10 @@
             <input type="text" name="remarks" value="" placeholder="请输入">
           </div>
         </div>
+        <button class="btn-submit-cancel" @click="vm.showDialog=true">取消订单</button>
+        <button class="btn-submit">支付</button>
       </form>
-      <button class="btn-submit-cancel" @click="vm.showDialog=true">取消订单</button>
-      <button class="btn-submit">支付</button>
+
     </div>
     <Dialog class="exam" @closeDialog="close" v-if="vm.showDialog"></Dialog>
   </div>
@@ -481,6 +482,7 @@
       color #fff
       line-height 40px
       border none
+      font-size 14px
 
     .btn-submit-cancel
       background-color #F39281
@@ -490,6 +492,7 @@
       color #fff
       line-height 40px
       border none
+      font-size 14px
 
     >>> .package
       .sex

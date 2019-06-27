@@ -85,12 +85,12 @@ export default new Router({
       component: Reservation
     },
     {
-      path: '/test',
-      component: Test
-    },
-    {
       path: '/user',
       component: User
+    },
+    {
+      path: '/test',
+      component: Test
     }
   ]
 })

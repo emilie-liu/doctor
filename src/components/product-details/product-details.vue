@@ -40,7 +40,7 @@
       </div>
     </div>
     <div class="res-div">
-      <span class="pro-address">最低价格：</span><span class="res-price">¥338.00</span>
+      <span class="pro-address">最低价格：</span><span class="res-price">￥1000.01</span>
       <cube-button class="res-btn" @click="productOrder(productId)">立即预约</cube-button>
     </div>
   </div>
@@ -444,6 +444,21 @@
                 name: '香港安生医疗中心',
                 address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇300号',
                 tel: '13333333'
+              },{
+                id: '0046',
+                name: '新添加一',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                tel: '11111111'
+              },{
+                id: '0047',
+                name: '新添加二',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                tel: '11111111'
+              },{
+                id: '0048',
+                name: '新添加三',
+                address: '上水龙圣路48号上水汇100号上水龙圣 路48号上水汇100号',
+                tel: '11111111'
               }
             ]
           }
@@ -452,7 +467,7 @@
     },
     created() {
       this.productId = this.$route.params.id;
-      console.log(this.productId + 'product页面传值');
+      console.log(this.productId + 'product页面的id值传递到详情页面');
     },
     methods: {
       productOrder:function(id) {

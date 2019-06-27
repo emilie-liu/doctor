@@ -4,7 +4,7 @@
     <div class="contact-content">
       <span class="contact-title">联系我们</span>
       <p>感谢您使用「港医德」，如您对我们的资讯有任何查询或意见，欢迎您填写一下表格联系我们。</p>
-      <form @submit.prevent="submit">
+      <form @submit.prevent="submit" >
         <div class="content-title">昵称：</div>
         <input type="text" nam="username" v-model="inputtext.username">
         <div class="content-title">电话：</div>
@@ -72,6 +72,8 @@
     background-color #F4F4F4
     border 1px solid #D8D8D8
     padding 0 2%
+    border-radius 5px
+    font-size 14px
 
   .btn-submit
     background-color #06C7C5
@@ -81,4 +83,5 @@
     color #fff
     line-height 40px
     border none
+    font-size 14px
 </style>

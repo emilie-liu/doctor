@@ -43,7 +43,7 @@
           <ul>
             <li class="doctor-li" v-for="doctor in item.doctors" @click="doctorDetails(doctor.id)">
               <div>
-                <img class="doctor-avatar" src="" alt="" width="46" height="46px">
+                <img class="doctor-avatar" src="" alt="" width="46" height="46">
                 <div class="doctor-into">
                   <div class="doctor-name">{{doctor.name}}医生</div>
                   <span class="doctor-dept">{{doctor.specName}}</span>
@@ -346,6 +346,125 @@
                 clinicAddress: '香港九龙尖沙咀弥敦道26号11楼全层（尖沙咀喜来登酒店侧）'
               }
             ]
+          },{
+            label: '内科',
+            doctors: [
+              {
+                id: '015',
+                name: '陈奕迅',
+                specName: '内科',
+                doctorName: '主治医生',
+                imgUrl: '',
+                barPrice: '25',
+                secPrice: '1000.01',
+                desc: '从事外科20年丰富的男性前列腺疾病，医学博士生导师......',
+                specialty: '从事外科20年丰富的男性前列腺疾病，医学博士生导师 从事外科20年丰富的男性前列腺疾病，医学博士生导师从事外科20年丰富的男性前列腺疾病，医学博士生导师',
+                clinicName: '香港综合肿瘤中心',
+                clinicAddress: '香港九龙尖沙咀弥敦道26号11楼全层（尖沙咀喜来登酒店侧）'
+              }
+            ]
+          },{
+            label: '精神科',
+            doctors: [
+              {
+                id: '016',
+                name: '陈奕迅',
+                specName: '精神科',
+                doctorName: '主治医生',
+                imgUrl: '',
+                barPrice: '25',
+                secPrice: '1000.01',
+                desc: '从事外科20年丰富的男性前列腺疾病，医学博士生导师......',
+                specialty: '从事外科20年丰富的男性前列腺疾病，医学博士生导师 从事外科20年丰富的男性前列腺疾病，医学博士生导师从事外科20年丰富的男性前列腺疾病，医学博士生导师',
+                clinicName: '香港综合肿瘤中心',
+                clinicAddress: '香港九龙尖沙咀弥敦道26号11楼全层（尖沙咀喜来登酒店侧）'
+              }
+            ]
+          },{
+            label: '鼻科',
+            doctors: [
+              {
+                id: '017',
+                name: '陈奕迅',
+                specName: '鼻科',
+                doctorName: '主治医生',
+                imgUrl: '',
+                barPrice: '25',
+                secPrice: '1000.01',
+                desc: '从事外科20年丰富的男性前列腺疾病，医学博士生导师......',
+                specialty: '从事外科20年丰富的男性前列腺疾病，医学博士生导师 从事外科20年丰富的男性前列腺疾病，医学博士生导师从事外科20年丰富的男性前列腺疾病，医学博士生导师',
+                clinicName: '香港综合肿瘤中心',
+                clinicAddress: '香港九龙尖沙咀弥敦道26号11楼全层（尖沙咀喜来登酒店侧）'
+              }
+            ]
+          },{
+            label: '儿科',
+            doctors: [
+              {
+                id: '018',
+                name: '陈奕迅',
+                specName: '儿科',
+                doctorName: '主治医生',
+                imgUrl: '',
+                barPrice: '25',
+                secPrice: '1000.01',
+                desc: '从事外科20年丰富的男性前列腺疾病，医学博士生导师......',
+                specialty: '从事外科20年丰富的男性前列腺疾病，医学博士生导师 从事外科20年丰富的男性前列腺疾病，医学博士生导师从事外科20年丰富的男性前列腺疾病，医学博士生导师',
+                clinicName: '香港综合肿瘤中心',
+                clinicAddress: '香港九龙尖沙咀弥敦道26号11楼全层（尖沙咀喜来登酒店侧）'
+              }
+            ]
+          },{
+            label: '骨科',
+            doctors: [
+              {
+                id: '019',
+                name: '陈奕迅',
+                specName: '骨科',
+                doctorName: '主治医生',
+                imgUrl: '',
+                barPrice: '25',
+                secPrice: '1000.01',
+                desc: '从事外科20年丰富的男性前列腺疾病，医学博士生导师......',
+                specialty: '从事外科20年丰富的男性前列腺疾病，医学博士生导师 从事外科20年丰富的男性前列腺疾病，医学博士生导师从事外科20年丰富的男性前列腺疾病，医学博士生导师',
+                clinicName: '香港综合肿瘤中心',
+                clinicAddress: '香港九龙尖沙咀弥敦道26号11楼全层（尖沙咀喜来登酒店侧）'
+              }
+            ]
+          },{
+            label: '胸腔外科',
+            doctors: [
+              {
+                id: '020',
+                name: '陈奕迅',
+                specName: '胸腔外科',
+                doctorName: '主治医生',
+                imgUrl: '',
+                barPrice: '25',
+                secPrice: '1000.01',
+                desc: '从事外科20年丰富的男性前列腺疾病，医学博士生导师......',
+                specialty: '从事外科20年丰富的男性前列腺疾病，医学博士生导师 从事外科20年丰富的男性前列腺疾病，医学博士生导师从事外科20年丰富的男性前列腺疾病，医学博士生导师',
+                clinicName: '香港综合肿瘤中心',
+                clinicAddress: '香港九龙尖沙咀弥敦道26号11楼全层（尖沙咀喜来登酒店侧）'
+              }
+            ]
+          },{
+            label: '胸腔内科',
+            doctors: [
+              {
+                id: '021',
+                name: '陈奕迅',
+                specName: '胸腔内科',
+                doctorName: '主治医生',
+                imgUrl: '',
+                barPrice: '25',
+                secPrice: '1000.01',
+                desc: '从事外科20年丰富的男性前列腺疾病，医学博士生导师......',
+                specialty: '从事外科20年丰富的男性前列腺疾病，医学博士生导师 从事外科20年丰富的男性前列腺疾病，医学博士生导师从事外科20年丰富的男性前列腺疾病，医学博士生导师',
+                clinicName: '香港综合肿瘤中心',
+                clinicAddress: '香港九龙尖沙咀弥敦道26号11楼全层（尖沙咀喜来登酒店侧）'
+              }
+            ]
           }
         ]
       }
@@ -355,6 +474,7 @@
       this.selectedLabel = this.specialist[0].label
     },
     methods: {
+      //点击医生详情时，进入医生详情页面，同时把医生id传过去
       doctorDetails(id) {
         this.$router.push({
           path: '/doctor-details/'+id,
@@ -390,6 +510,7 @@
 
     .doctor-avatar
       width 46px
+      height 46px
       background-color #999999
       border-radius 100%
       margin-right 2%

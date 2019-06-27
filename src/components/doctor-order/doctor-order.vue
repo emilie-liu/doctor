@@ -501,5 +501,6 @@
     color #fff
     line-height 40px
     border none
+    font-size 14px
 
 </style>
