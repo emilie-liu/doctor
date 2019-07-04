@@ -482,7 +482,6 @@
             doctorId:id
           }
         });
-        console.log(id)
       }
     },
     components: {

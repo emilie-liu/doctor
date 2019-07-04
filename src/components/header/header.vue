@@ -34,12 +34,7 @@
     width 100%
     z-index 1
 
-    /*.icon-close
-      display inline-block
-      width: 18px
-      height: 18px
-      vertical-align sub
-      margin-right 2%*/
+
   .cubeic-close
     margin-right 2%
     font-size 24px

@@ -3,7 +3,7 @@
     <Header :title="title"></Header>
     <div class="doctor-content">
       <form action="">
-        <div class="doctor-detail" v-for="(doctor, index) in doctors" :key="index" v-show="doctor.id === doctorId">
+        <div class="doctor-detail" v-for="(doctor, index) in doctors" :key="index" v-if="doctor.id === doctorId">
           <div class="details-content">
             <img class="img-avatar" src="" alt="" width="120px" height="120px">
             <div class="doctor-intro">
@@ -336,7 +336,7 @@
     created() {
       //接收医生列表id
       this.doctorId = this.$route.params.id;
-      console.log(this.doctorId + 'product页面传值');
+      console.log(this.doctorId + '医生列表到医生页面的传值（医生id）');
     },
     methods: {
       //医生详情跳转订单连接

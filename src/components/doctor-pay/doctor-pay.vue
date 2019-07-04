@@ -3,7 +3,7 @@
     <Header :title="title"></Header>
     <div class="order-content">
       <form action="doctor-pay.vue" method="get">
-        <div class="order-module"  v-for="(doctor, index) in doctors" :key="index" v-show="doctor.id === doctorId">
+        <div class="order-module"  v-for="(doctor, index) in doctors" :key="index" v-if="doctor.id === doctorId">
           <div class="package doctor-package">
             <img class="avatar-img" src="./doc-avatar.png" alt="" width="70" height="70">
             <div class="doctor-intro">
@@ -121,7 +121,6 @@
         vm :{
           showDialog: false
         },
-
         sex: '',
         doctorId: '',
         doctors: [
@@ -378,7 +377,7 @@
     created(){
       //接收路由传递的id
       this.doctorId = this.$route.params.id;
-      console.log(this.doctorId + '医生订单支付页面传值');
+      console.log(this.doctorId + '医生订单详情到医生订单支付页面传值（医生id）');
     },
     methods: {
       //是否取消订单提示框
